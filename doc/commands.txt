@@ -1,0 +1,23 @@
+manual para crear comandos en artisan laravel 4
+
+1. ejecutar el siguiente comando en la carpeta laravel
+    --en produccion me funcionno previamente creando la carpeta /commands
+    -- y asignandole como dueño www-data.www-data
+    php artisan command:make ProcesoCommand
+
+2. editar en el archivo que se genera: ProcesoCommand.php
+
+    la propiedad $name, es el comando que se ejecutara 'ofsc:enviomasivo'
+
+3. añadir en artisan el nombre de la clase, la carpeta es
+   /app/start/artisan.php
+
+    Artisan::add(new ProcesoCommand);
+
+4. establecer los argumentos del comando
+
+    return array();
+
+5. probar la ejecucion del comando
+
+    php artisan ofsc:enviomasivo

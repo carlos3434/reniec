@@ -1,0 +1,54 @@
+===============
+  Comandos Redis:
+===============
+
+1.- Ejecutar el servidor
+       redis-server 
+2.- Ejecutar el servidor con archivo de configuracion
+       redis-server /home/libpsi/redis-stable/redis.conf
+3.- Cliente monitor
+       redis-cli monitor
+4.- Para entrar al cliente redis:
+       redis-cli
+5.- dentro del cliente
+       FLUSHALL      flush a todas las BD
+       FLUSHDB       flush a la BD actual
+       ping                testear
+       help @server
+       
+6.- Borrar registros en redis, dentor de la consola ingresar:
+       del lrange queues:envio_liquidados 0 -1
+==================
+ Comandos supervisord:
+==================
+
+1.- Reiniciar servicio
+       service supervisor restart
+
+2.- Para entrar al cliente:     
+       supervisorctl
+3.- Dentro del cliente:
+       stop "nombre_cola"
+       start "nombre_cola"
+       reread
+       update
+       help
+       add "nombre_cola"
+       remove "nombre_cola"
+
+===================
+comandos laravel
+===================
+
+1.- flush a la cola de laravel
+       php artisan queue:flush
+2.- reiniciar cola
+       php artisan queue:restart
+3.- limpiar la cache
+       php artisan cache:clear
+4.- limpiar la optimizacion
+       php artisan clear-compiled
+5.- optimizar
+       php artisan optimize
+6.- mas comandos
+       php artisan list

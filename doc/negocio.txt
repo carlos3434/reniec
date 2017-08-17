@@ -1,0 +1,106 @@
+==========
+Restaurant
+==========
+
+Modulo de pedidos
+
+En este modulo el mozo podra visualizar las mesas que se le asigno
+y cada meza tendra un color segun el estado que se encuentre:
+
+1.- el mozo debe tener visivilidad de los platos del dia y los de la carta
+2.- los platos del menu deberan aparecer agrupados por tipo : entrada sopa segundo, etc.
+3.- debera haber un mantenimiento del sistema,  donde se puedan realizar combinaciones de los platos y se puedan presentar al mozo
+4.- las combinaciones seran (entrada, segundo, chicha) (sopa, segundo chicha)
+5.- El mozo podra añadir plato o combinacion al pedido en cualquier momento,
+    para ello siempre se tendra que regresar el estado del pedido a pendiente
+6.- Cuando se presione en el boton siguiente se previsualizara el pedido,
+    se le preguntara si esa seguro del pedido
+7.- Cuando se este seguro, el sistema registrara un nuevo pedido y este se debera visualizar en cocina
+
+
+
+
+Modulo de cocina
+1.- se vera los pedidos segun la fecha y hora ordenados de forma descendiente
+2.- se debera imprimir tickets para que se EVALUAR
+3.- el cocinero debe tomar un pedido y este se debe marcar con este cocinero,
+4.- el usuario vera los pedidos que se generaron segun su sede
+
+Modulo de Caja
+1.- se debera poder cobrar por grupo o por ṕersona
+2.- al moemtno de sacar la cuenta el moso preguntara la forma de pago
+    CRITICO
+
+
+Mantenimiento de estados de meza
+1.- se podra hacer crud de los estados, y editar el color de  cada estado de meza
+
+Mantenimiento de estado de pedido
+1.- se podra hacer crud de los estados y añadir colores para los pedidos
+
+Mantenimiento de mosos
+1.- se podra hacer crud de mosos y asignarles bloques de mesas.
+2.- un mozo es un tipo de usuario, pero la diferencia es que se le asigna mesas
+    la persona que hace esto sera el encargado de la sede.
+    Por ello el encargado  debera tener configurado su sede (como todos los usuarios)
+    solo se podra signar mesas de una sede que el encargado pueda ver
+    si el moso se va a otro restaurant deberan desactivar sus mesas de una sede,
+    podria haber una encargado que tenga configurado mas de una sede. Este podra asignar mesas de distintas sedes al moso
+3.- al momento de cargar el modal de (nuevo editar) cargara el combo de sedes si el encargado tiene mas de una sede
+
+Mantenimeitno de cocineros
+1.- estto se ve en mantenimiento de usuarios
+
+Mantenimiento de Mesas
+1.- Se podra hacer crud de las mesas y asignarles bloque (grupo de mesas)
+2.- al momento de asignar bloque debe cargr la lista de sedes, luego en funcion
+    a la sede la lista de bloques, para poder crear la mesa dentro de un bloque
+
+Mantenimiento de bloques
+1.- Se debera crear un manteniminto de bloques, no se podra eliminar bloques que tengan mesas activas
+2.- los bloques son agrupaciones de mesas, pertenecen a una sede, por ello
+    debera cargar la lista de sedes o si hubiese una sola sede debera autoseleccionarse esta
+
+
+Mantenimiento de Usuario
+1.- a los usuarios se debera asignar un a sede (grupo) para que solo puedan acceder a los pedidos 
+    segun su sede de trabajo, puede tener varios
+2.- se debe crear la signacion de rol y permisos a las opciones del sistema
+3.- debera haber una escala de permisos, es decir una jerarquia de usuarios.
+    un cocinero no podria borar usuarios, etc
+
+Mantenimietno de Roles
+1.- mozo, administrador, cocinero,desarrollador, encargado de sede
+
+Matenimiento de opciones del sistema
+1.- se podra hacer crud de las ocpiones dle sistema
+
+Manteniemitno de Permisos
+1.- se debera poder asignar permisos de CRUD a todas las opciones del sistema
+
+
+Mantenimiento de sedes de Restaurant
+1.- se podra hacer crud
+
+Mantenimiento de platos
+1-  crud
+2.- se debera cargar fotos de los platos
+3.- crear combinaciones o agrupar platos de distinto tipo, y  asignarle un 
+    tipo de orden (menu o carta)
+4.- calendario de los pedidos. se podra asignar los feriados y horario de atencion,
+    y que platos deberan prepararse. se podra modificar el calendario segun un tiempo limite que tambien debe ser configurable
+5.- 
+
+Mantenimiento de tipos de Platos (entrada sopa segundo etc)
+
+Reporte:
+
+1.- platos mas vendidos
+2.- platos atendidos por mosos
+3.- CRITICO
+
+Debe haber una opcion al momento antes de pagar para k el moso pregunte
+como se va a pagar y este pued agrupar pedidos y agruparlos
+y esto se peuda comuinicar a caja y se pueda cobrar por grupo: por eje,mplo de la mesa 23: hay 3 grupos 1 2 3, 
+entonces cuando la persona se acerque diga de la mesa 23 el grupo 2 cuanto es?
+y que sea por defecto varias ventas 

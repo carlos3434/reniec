@@ -1,0 +1,220 @@
+var tabla='datatable_tabletools';
+$(".btn-mesa").click(function(){
+    id = $(this).data("id");
+    Pedido.get(id);
+    
+    //$(this).attr("data-mesa", JSON.stringify(data));
+    //$("#modal-pedido .modal-title").html("<b>PEDIDO : <b>"+data.nombre);
+    $("#modal-pedido").modal("show");
+});
+
+$(document).ready(function() {
+
+    var platos_seleccionados = [];
+    var data={'estado':1};
+
+    Pedido.all(mesas);
+    $('#nuevoPedido').on('show.bs.modal', function (event) {
+        slctGlobal.listarSlct('mesa','slct_mesa','simple',null,data); 
+        slctGlobal.listarSlct('user','slct_users','simple',null,data);
+        slctGlobal.listarSlct('plato','slct_plato','simple',null,data);         
+    });
+
+    $(document).on('click', '.btnAgregar', function(event) {
+        var html = '';
+        var value = $("#slct_plato").val(); 
+        var exits = jQuery.inArray( value, platos_seleccionados );
+        if(exits == -1 && value != ''){
+            platos_seleccionados.push(value);
+
+            html+='<tr>';
+            html+=' <td>'+$("#slct_plato option[value='"+value+"']").text()+'</td>';        
+            html+=' <td><span class="btn btn-danger btn-md btnRemove" valor='+value+'><i class="glyphicon glyphicon-remove"></i></span></td>';
+            html+='</tr>';
+            $(".dishes").append(html);
+            $("#slct_plato").multiselect('refresh');
+        }else{
+            alert('El plato ya se encuentra en el pedido');
+        }
+    });
+
+    $(document).on('click', '.btnRemove', function(event) {
+        var index = platos_seleccionados.indexOf($(this).attr('valor'));
+        platos_seleccionados.splice(index);        
+        $(this).parent().parent().remove();
+    });
+    
+    pageSetUp();
+    //Users.allPaginate(dataUsersPag);
+    activarTabla();
+    //Users.all(dataUsers);
+});
+mesas=function(){
+
+};
+activarTabla=function(){
+    /* BASIC ;*/
+    var responsiveHelper_datatable_tabletools = undefined;
+    
+    var breakpointDefinition = {
+        tablet : 1024,
+        phone : 480
+    };
+    var columnDefs=[
+        /*{
+            "targets": 0,
+            "data": function ( row, type, val, meta ) {
+                ruta_detalle_id.push('td_'+row.ruta_detalle_id);
+                if(row.id>0){//est visto
+                    //el boton debera cambiar  a no visto
+                    estado.push('desactivar('+row.id+','+row.ruta_detalle_id+',this)');
+                    fondo.push('');
+                    visto='<i id="td_'+row.ruta_detalle_id+'" class="fa fa-eye"></i>';
+                } else {
+                    //unread
+                    estado.push('activar('+row.id+','+row.ruta_detalle_id+',this)');
+                    fondo.push('unread');
+                    visto='<i id="td_'+row.ruta_detalle_id+'" class="fa fa-ban"></i>';
+                }
+                return visto;
+            },
+            "defaultContent": '',
+            "name": "visto"
+        },*/
+        {
+            "targets": 0,
+            "data": "id",
+            "name": "id"
+        },
+        {
+            "targets": 1,
+            "data": "nombres",
+            "name": "nombres"
+        },
+        {
+            "targets": 2,
+            "data": "apellidos",
+            "name": "apellidos"
+        },
+        {
+            "targets": 3,
+            "data": "numero_telefono",
+            "name": "numero_telefono"
+        },
+        {
+            "targets": 4,
+            "data": "genero",
+            "name": "genero"
+        },
+        {
+            "targets": 5,
+            "data": "email",
+            "name": "email"
+        },
+        {
+            "targets": 6,
+            "data": "direccion",
+            "name": "direccion"
+        }
+    ];
+
+    $('#'+tabla).dataTable({
+            "processing": true,
+            "serverSide": true,
+            //"stateSave": true,
+            //"searching": false,
+            //"ordering": false,
+        //"ajax": "user/all-paginate",
+        "ajax": {
+            "url": "user/all-paginate",
+            "type": "POST",
+            "data": function(response){
+                //console.log(response);
+            },
+        },
+        columnDefs,
+        "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'T>r>"+
+                "t"+
+                "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+        "oLanguage": {
+            "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+        },
+        "oTableTools": {
+            "aButtons": [
+            "copy",
+            "csv",
+            "xls",
+                {
+                    "sExtends": "pdf",
+                    "sTitle": "SmartAdmin_PDF",
+                    "sPdfMessage": "SmartAdmin PDF Export",
+                    "sPdfSize": "letter"
+                },
+                {
+                    "sExtends": "print",
+                    "sMessage": "Generated by SmartAdmin <i>(press Esc to close)</i>"
+                }
+            ],
+            "sSwfPath": "js/plugin/datatables/swf/copy_csv_xls_pdf.swf"
+        },
+        "autoWidth" : true,
+        "preDrawCallback" : function() {
+            // Initialize the responsive datatables helper once.
+            if (!responsiveHelper_datatable_tabletools) {
+                responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#'+tabla), breakpointDefinition);
+            }
+        },
+        "rowCallback" : function(nRow) {
+            responsiveHelper_datatable_tabletools.createExpandIcon(nRow);
+        },
+        "drawCallback" : function(oSettings) {
+            responsiveHelper_datatable_tabletools.respond();
+        }
+    });
+};
+dataUsers=function(datos){
+    var html="", estadohtml="";
+    //$('#'+tabla).dataTable().fnDestroy();
+    $.each(datos,function(index,data){
+        //estadohtml='<span id="'+data.id+'" onClick="activar('+data.id+')" class="btn btn-danger">Inactivo</span>';
+        //if(data.estado==1){
+        //    estadohtml='<span id="'+data.id+'" onClick="desactivar('+data.id+')" class="btn btn-success">Activo</span>';
+        //}
+
+        html+="<tr>"+
+            "<td>"+data.id+"</td>"+
+            "<td>"+data.nombres+"</td>"+
+            "<td>"+data.numero_telefono+"</td>"+
+            "<td>"+data.apellidos+"</td>"+
+            "<td>"+data.genero+"</td>"+
+            "<td id='estado_"+data.id+"' data-estado='"+data.estado+"'>"+estadohtml+"</td>"+
+            '<td><a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#areaModal" data-id="'+index+'" data-titulo="Editar"><i class="fa fa-edit fa-lg"></i> </a></td>';
+
+        html+="</tr>";
+    });
+    $("#"+tabla+'>tbody').html(html);
+    activarTabla();
+};
+dataUsersPag=function(datos){
+    var html="", estadohtml="";
+    //$('#'+tabla).dataTable().fnDestroy();
+    $.each(datos,function(index,data){
+        //estadohtml='<span id="'+data.id+'" onClick="activar('+data.id+')" class="btn btn-danger">Inactivo</span>';
+        //if(data.estado==1){
+        //    estadohtml='<span id="'+data.id+'" onClick="desactivar('+data.id+')" class="btn btn-success">Activo</span>';
+        //}
+
+        html+="<tr>"+
+            "<td>"+data.id+"</td>"+
+            "<td>"+data.nombres+"</td>"+
+            "<td>"+data.numero_telefono+"</td>"+
+            "<td>"+data.apellidos+"</td>"+
+            "<td>"+data.genero+"</td>"+
+            "<td id='estado_"+data.id+"' data-estado='"+data.estado+"'>"+estadohtml+"</td>"+
+            '<td><a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#areaModal" data-id="'+index+'" data-titulo="Editar"><i class="fa fa-edit fa-lg"></i> </a></td>';
+
+        html+="</tr>";
+    });
+    $("#"+tabla+'>tbody').html(html);
+    activarTabla();
+};

@@ -1,0 +1,19 @@
+crear colas en laravel
+1:
+nano /etc/supervisor/conf.d/laravel_queue_enviomasivo.conf
+
+
+[program:laravel_queue_enviomasivo_test]
+
+command=php /www/virtuales/psi20/htdocs/laravel/artisan queue:listen --queue=enviomasivo_test --timeout=0
+
+stderr_logfile=/www/virtuales/psi20/htdocs/laravel/app/storage/logs/laravel_queue_enviomasivo_test.err.log
+stdout_logfile=/www/virtuales/psi20/htdocs/laravel/app/storage/logs/laravel_queue_enviomasivo_test.out.log
+
+redirect_stderr=true
+
+2:  supervisorctl
+
+reread
+update
+status

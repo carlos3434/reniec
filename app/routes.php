@@ -36,6 +36,9 @@ Route::group(["before" => "auth"], function() {
     });
 
 });*/
+
+Route::get('sueldos', 'ApiSueldoController@index');
+
 Route::get('colores', function () {
 /*
             $sql = "SELECT p.id, p.nombre, cp.stock, cp.precio, tp.nombre as tipo

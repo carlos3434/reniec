@@ -63,3 +63,11 @@ mix.babel(
     ],
     'public/frontend/charts.js'
 ).version();
+
+mix.babel(
+    [
+    'resources/admin/estadistica/Distribution.js',
+    'resources/admin/estadistica/Gaussian.js'
+    ],
+    'public/admin/estadistica/sueldo/app.js'
+).version();

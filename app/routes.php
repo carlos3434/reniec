@@ -148,6 +148,9 @@ Route::group(["before" => "auth"], function() {
         Route::get('charts', function () {
             return View::make('charts');
         });
+        Route::get('admin.estadistica.sueldo', function () {
+            return View::make('admin.estadistica.sueldo');
+        });
         Route::get('admin.tarea.registro', function () {
             return View::make('admin.tarea.registro');
         });

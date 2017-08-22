@@ -10,71 +10,23 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-/*
-Route::get('/', function()
-{
-	return View::make('hello');
-});*/
-/*
-Route::group(["before" => "auth"], function() {
-    Route::group(['prefix' => 'admin','middleware' => ['sesion']], function () {
-        Route::get('inicio', function () {
-            return view('admin.inicio');
-        });
 
-        //esto tiene que ser dinamico
-        Route::get('/{uri}', function ($uri) {
-            list($modulo,$submodulo) = explode('.', $uri);
-            return view('admin.'.$modulo.'.'.$submodulo.'.index');
-        });
-    });
-    //llamada de apis
 
-    Route::group(['prefix' => 'api'], function () {
-        //Route::resource('/users', 'ApiUserController');
-        Route::resource('/users', 'ApiUserController');
-    });
-
-});*/
-
+Route::get('empleabilidad', function () {
+    return View::make('web.empleabilidad');
+});
+Route::get('home', function () {
+    return View::make('web.home');
+});
 Route::get('sueldos', 'ApiSueldoController@index');
 
 Route::get('colores', function () {
-/*
-            $sql = "SELECT p.id, p.nombre, cp.stock, cp.precio, tp.nombre as tipo
-                    FROM calendario_platos cp
-                    JOIN calendarios  c  ON cp.calendario_id = c.id
-                    JOIN platos  p  ON cp.plato_id = p.id
-                    JOIN tipo_platos  tp ON p.tipo_platos_id  =  tp.id
-                    WHERE fecha='2017-05-08' AND p.categoria_platos_id=1";
-            $menu = DB::select($sql);
-            $sql = "SELECT p.id, p.nombre, cp.stock, cp.precio, tp.nombre as tipo
-                    FROM calendario_platos cp
-                    JOIN calendarios  c  ON cp.calendario_id = c.id
-                    JOIN platos  p  ON cp.plato_id = p.id
-                    JOIN tipo_platos  tp ON p.tipo_platos_id  =  tp.id
-                    WHERE fecha='2017-05-08' AND p.categoria_platos_id=2";
-            $carta = DB::select($sql);
-            $data=[
-                'mesas' => $mesas,
-                'menu'  => $menu,
-                'carta' => $carta
-            ];*/
-            $colores=[12, 19, 3, 5, 2, 3];
-            return Response::json($colores);
-        });
+    $colores=[12, 19, 3, 5, 2, 3];
+    return Response::json($colores);
+});
 
 Route::get('envio', 'OfficetrackController@getEnvio');
 Route::post('ot', 'OfficetrackController@getServer');
-Route::get('admin/{subs?}', function () {
-    return View::make('admin');
-})
-->where(['subs' => '.*']);
-
-Route::get('test',function(){
-    $mov = Movimiento::where('TaskNumber',1234567)->first();
-    var_dump($mov);
-});
 
 Route::any('/', function()
 {
@@ -85,16 +37,6 @@ Route::any('/', function()
     return View::make('user/login');
 });
 
-Route::get('entrust', function()
-{
-     $options = array(
-    'validate_all' => true,
-    'return_type' => 'both'
-    );
-     $user = Auth::user();
-    list($validate,$allValidations) = $user->ability(array('Admin','Owner'), array('manage_posts','manage_users'), $options);
-    dd($validate,$allValidations);
-});
 Route::get('password/remind', function()
 {
     return View::make('password/remind');

@@ -66,8 +66,10 @@ mix.babel(
 
 mix.babel(
     [
+    'resources/admin/estadistica/ajax.js',
     'resources/admin/estadistica/Distribution.js',
-    'resources/admin/estadistica/Gaussian.js'
+    'resources/admin/estadistica/Gaussian.js',
+    'resources/admin/estadistica/Gauss.js'
     ],
     'public/admin/estadistica/sueldo/app.js'
 ).version();

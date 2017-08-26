@@ -87,6 +87,16 @@
             <div id="Distribution"></div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12">
+              <canvas id="canvas_Line1" height="300" width="600"></canvas>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12">
+              <canvas id="canvas_Line2" height="300" width="600"></canvas>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -171,6 +181,8 @@
     <!-- Custom scripts for this template -->
     <script src="web/js/freelancer.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src='js/charts/ChartNew.js'></script>
+    <script src='js/charts/format.js'></script>
 
     {{HTML::script(mix('/admin/estadistica/sueldo/app.js'))}}
   </body>

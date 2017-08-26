@@ -67,7 +67,7 @@
 
         <div class="row">
           <div class="col-sm-6 portfolio-item">
-            <a class="portfolio-link" href="sueldos">
+            <a class="portfolio-link" href="empleabilidad">
               <h2 class="text-center">Sueldos y empleabilidad</h2>
             </a>
           </div>

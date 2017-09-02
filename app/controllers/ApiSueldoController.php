@@ -21,7 +21,7 @@ class ApiSueldoController extends Controller
     public function index()
     {
         //$sueldos = DB::table('sueldos')->get();
-        $sueldos = DB::table('sueldos')->lists('sueldo');
+        //$sueldos = DB::table('sueldos')->lists('sueldo');
 
         //dd($sueldos);
 
@@ -41,8 +41,12 @@ class ApiSueldoController extends Controller
         
         $avg = DB::table('sueldos')->avg('sueldo');
 
+        $labels = ["1200","1500","1800","2100","2400","2700"];
+        $sueldos = [1400, 1700, 2000, 1600, 500];
+
         $response = array(
-          "data" => $sueldos
+            "labels" => $labels,
+            "data" => $sueldos
         );
 
         return Response::json($response);

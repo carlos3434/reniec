@@ -19,6 +19,8 @@ Route::get('home', function () {
     return View::make('web.home');
 });
 
+Route::get('careers', 'ApiSueldoController@careers');
+
 Route::get('sueldos/{careerId}', 'ApiSueldoController@index');
 
 Route::get('colores', function () {

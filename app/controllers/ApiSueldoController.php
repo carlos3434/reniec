@@ -18,6 +18,39 @@ class ApiSueldoController extends Controller
         return $result;
     }
 
+    public function careers()
+    {
+
+        $careers = array(
+            [
+                "id" => 1,
+                "name" => "Ingeniería Informática"
+            ],
+            [
+                "id" => 2,
+                "name" => "Derecho"
+            ],
+            [
+                "id" => 3,
+                "name" => "Arquitectura"
+            ],
+            [
+                "id" => 4,
+                "name" => "Ingeniería Industrial"
+            ],
+            [
+                "id" => 5,
+                "name" => "Psicología"
+            ]
+        );
+
+        $response = array(
+            "careers" => $careers,
+        );
+
+        return Response::json($response);
+    }
+
     public function index($id)
     {
         //$sueldos = DB::table('sueldos')->get();
@@ -47,7 +80,7 @@ class ApiSueldoController extends Controller
         if ($id == 1) {
             $labels = ["1200","1500","1800","2100","2400","2700"];
             $sueldos = [1400, 1700, 2000, 1600, 500, 300];
-        } else if ($id == 2) {
+        } else if ($id >= 2) {
             $labels = ["800","1200","2100","2500","3100","3500"];
             $sueldos = [800, 1200, 2100, 2500, 3100, 100];
         };

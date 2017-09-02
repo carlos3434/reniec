@@ -18,7 +18,8 @@ Route::get('empleabilidad', function () {
 Route::get('home', function () {
     return View::make('web.home');
 });
-Route::get('sueldos', 'ApiSueldoController@index');
+
+Route::get('sueldos/{careerId}', 'ApiSueldoController@index');
 
 Route::get('colores', function () {
     $colores=[12, 19, 3, 5, 2, 3];

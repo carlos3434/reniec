@@ -50,6 +50,38 @@ class ApiSueldoController extends Controller
 
         return Response::json($response);
     }
+    public function regiones()
+    {
+
+        $regiones = array(
+            [
+                "id" => 1,
+                "name" => "Lima"
+            ],
+            [
+                "id" => 2,
+                "name" => "Huancayo"
+            ],
+            [
+                "id" => 3,
+                "name" => "Arequipa"
+            ],
+            [
+                "id" => 4,
+                "name" => "Piura"
+            ],
+            [
+                "id" => 5,
+                "name" => "Trujillo"
+            ]
+        );
+
+        $response = array(
+            "regiones" => $regiones,
+        );
+
+        return Response::json($response);
+    }
 
     public function index($id, $year = 2016)
     {

@@ -2,13 +2,17 @@ let vm = new Vue({
     el: '#portfolio',
     data: {
         carreras:[],
-        carreraSelec:''
+        regiones:[],
+        carreraSelec:'',
+        regionSelec:'',
+        genero:'',
+        anio:2017
     },
 });
 
 var Empleabilidad={
-    get:function(careerId,callback) {
-        $.get( "sueldos/"+careerId,
+    get:function(careerId,anio,callback) {
+        $.get( "sueldos/"+careerId+"/"+anio,
         function(response) {
             callback(response);
         })
@@ -29,6 +33,23 @@ var Carreras={
         $.get( "careers",
         function(response) {
             vm.carreras=response.careers;
+        })
+        .done(function(response) {
+            //alert( "second success" );
+        })
+        .fail(function(response) {
+            //alert( "error" );
+        })
+        .always(function(response) {
+            //alert( "finished" );
+        });
+    }
+};
+var Regiones={
+    get:function() {
+        $.get( "regiones",
+        function(response) {
+            vm.regiones=response.regiones;
         })
         .done(function(response) {
             //alert( "second success" );
@@ -101,9 +122,77 @@ pintar=function(sueldos){
 };
 $( "#btn_sueldos" ).click(function() {
     careerId=$('#slct_carrera').val();
-    Empleabilidad.get(careerId,pintar);
-  
+    anio=vm.anio;
+    genero=vm.genero;
+    Empleabilidad.get(careerId,anio,pintar);
+    
 });
+
+
+
+options ={
+        segmentShowStroke : true,
+        segmentStrokeColor : "#fff",
+        segmentStrokeWidth : 2,
+        percentageInnerCutout : 50,
+        animationSteps : 100,
+        animationEasing : "easeOutBounce",
+        animateRotate : true,
+        animateScale : false,
+        responsive: true,
+        maintainAspectRatio: true,
+        showScale: true,
+        //animateScale: true
+};
+var data = {
+    labels: [
+        "Saudi Arabia",
+        "Russia",
+    ],
+    datasets: [
+        {
+            data: [133.3, 86.2],
+            backgroundColor: [
+                "#FF6384",
+                "#63FF84",
+                "#84FF63",
+                "#8463FF",
+                "#6384FF"
+            ]
+        }]
+};
+var chartOptions = {
+  rotation: -Math.PI,
+  cutoutPercentage: 30,
+  circumference: 2*Math.PI,
+  legend: {
+    position: 'left'
+  },
+  animation: {
+    animateRotate: false,
+    animateScale: true
+  }
+};
+/*
+data = {
+    datasets: [{
+        data: [10, 20, 30]
+    }],
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+        'Red',
+        'Yellow',
+        'Blue'
+    ]
+};*/
+var doughnut = document.getElementById("doughnut").getContext('2d');
+var myPieChart = new Chart(doughnut,{
+    type: 'pie',
+    data: data,
+    options: chartOptions
+});
+
 $(document).ready(function() {
     Carreras.get();
+    Regiones.get();
 });

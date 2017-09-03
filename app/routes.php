@@ -20,6 +20,7 @@ Route::get('home', function () {
 });
 
 Route::get('careers', 'ApiSueldoController@careers');
+Route::get('regiones', 'ApiSueldoController@regiones');
 
 Route::get('sueldos/{careerId}/{year?}', 'ApiSueldoController@index');
 

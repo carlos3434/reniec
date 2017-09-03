@@ -83,7 +83,7 @@ class ApiSueldoController extends Controller
         return Response::json($response);
     }
 
-    public function index($id, $year = 2016)
+    public function index($id = 1, $years = 1)
     {
 
         //$sueldos = DB::table('sueldos')->get();
@@ -110,7 +110,7 @@ class ApiSueldoController extends Controller
         $labels = ["1200","1500","1800","2100","2400","2700"];
         $sueldos = [1400, 1700, 2000, 1600, 500, 200];
 
-        if ($year == 2016) {
+        if ($years == 1) {
             if ($id == 1) {
                 $labels = ["1200","1500","1800","2100","2400","2700"];
                 $sueldos = [1400, 1700, 2000, 1600, 500, 300];
@@ -118,7 +118,7 @@ class ApiSueldoController extends Controller
                 $labels = ["800","1200","2100","2500","3100","3500"];
                 $sueldos = [800, 1200, 2100, 2500, 3100, 100];
             };
-        } else if ($year == 2012) {
+        } else if ($years == 5) {
             if ($id == 1) {
                 $labels = ["1400","1600","1700","2200","2700","3100"];
                 $sueldos = [1200, 1300, 2100, 2600, 400, 200];
@@ -134,7 +134,7 @@ class ApiSueldoController extends Controller
         );
 
         return Response::json($response);
-        
+
     }
 
 }

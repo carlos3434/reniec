@@ -64,13 +64,12 @@
               <div class="form-group">
                 <label class="control-label">Elige una carrera:
                 </label>
-                <select class="form-control" name="slct_carrera" id="slct_carrera">
-                    <option value='0'>Ingeniero de sistemas</option>
-                    <option value='1'>Medicina Huamna</option>
-                    <option value='2'>Contabilidad</option>
-                    <option value='3'>Trabajo social</option>
+                <select class="form-control" v-model="carreraSelec" name="slct_carrera" id="slct_carrera">
+                  <option v-for="carrera in carreras" v-bind:value="carrera.id">
+                    @{{ carrera.name }}
+                  </option>
                 </select>
-                <button type="button" class="btn btn-primary">Ver Estadisticas</button>
+                <button type="button" id="btn_sueldos" class="btn btn-primary">Ver Estadisticas</button>
               </div>
             </form>
           </div>
@@ -79,24 +78,10 @@
 
         <div class="row">
           <div class="col-xs-12 col-sm-12">
-            <div id="Gaussian"></div>
+            <canvas id="myChart" width="400" height="400"></canvas>
           </div>
         </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-12">
-            <div id="Distribution"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-12">
-              <canvas id="canvas_Line1" height="300" width="600"></canvas>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-12">
-              <canvas id="canvas_Line2" height="300" width="600"></canvas>
-          </div>
-        </div>
+        
       </div>
     </section>
 
@@ -180,11 +165,12 @@
 
     <!-- Custom scripts for this template -->
     <script src="web/js/freelancer.min.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src='js/charts/ChartNew.js'></script>
-    <script src='js/charts/format.js'></script>
+    <script src="/js/plugin/vue/vue-2.3.3.js"></script>
+    <script src="/js/plugin/vue/axios.min.js"></script>
 
-    {{HTML::script(mix('/admin/estadistica/sueldo/app.js'))}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+    {{HTML::script(mix('/frontend/charts.js'))}}
   </body>
 
 </html>

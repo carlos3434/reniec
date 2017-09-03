@@ -51,8 +51,9 @@ class ApiSueldoController extends Controller
         return Response::json($response);
     }
 
-    public function index($id)
+    public function index($id, $year = 2016)
     {
+
         //$sueldos = DB::table('sueldos')->get();
         //$sueldos = DB::table('sueldos')->lists('sueldo');
 
@@ -77,12 +78,22 @@ class ApiSueldoController extends Controller
         $labels = ["1200","1500","1800","2100","2400","2700"];
         $sueldos = [1400, 1700, 2000, 1600, 500, 200];
 
-        if ($id == 1) {
-            $labels = ["1200","1500","1800","2100","2400","2700"];
-            $sueldos = [1400, 1700, 2000, 1600, 500, 300];
-        } else if ($id >= 2) {
-            $labels = ["800","1200","2100","2500","3100","3500"];
-            $sueldos = [800, 1200, 2100, 2500, 3100, 100];
+        if ($year == 2016) {
+            if ($id == 1) {
+                $labels = ["1200","1500","1800","2100","2400","2700"];
+                $sueldos = [1400, 1700, 2000, 1600, 500, 300];
+            } else if ($id >= 2) {
+                $labels = ["800","1200","2100","2500","3100","3500"];
+                $sueldos = [800, 1200, 2100, 2500, 3100, 100];
+            };
+        } else if ($year == 2012) {
+            if ($id == 1) {
+                $labels = ["1400","1600","1700","2200","2700","3100"];
+                $sueldos = [1200, 1300, 2100, 2600, 400, 200];
+            } else if ($id >= 2) {
+                $labels = ["1500","1600","2100","2500","3100","3500"];
+                $sueldos = [700, 1100, 200, 2500, 700, 150];
+            };
         };
 
         $response = array(
@@ -91,6 +102,7 @@ class ApiSueldoController extends Controller
         );
 
         return Response::json($response);
+        
     }
 
 }

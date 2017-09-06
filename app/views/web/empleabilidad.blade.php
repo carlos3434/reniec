@@ -59,7 +59,7 @@
         
 
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-6">
             <form class="form-inline">
               <div class="form-group">
                 <label class="control-label">Elige una carrera:
@@ -69,16 +69,60 @@
                     @{{ carrera.name }}
                   </option>
                 </select>
-                <button type="button" id="btn_sueldos" class="btn btn-primary">Ver Estadisticas</button>
+
+              </div>
+            </form>
+          </div>
+          <div class="col-sm-6">
+            <form class="form-inline">
+              <div class="form-group">
+                <label class="control-label">Region:
+                </label>
+                <select class="form-control" v-model="regionSelec" name="slct_carrera" id="slct_carrera">
+                  <option v-for="region in regiones" v-bind:value="region.id">
+                    @{{ region.name }}
+                  </option>
+                </select>
+
               </div>
             </form>
           </div>
         </div>
 
+        <div class="row">
+          <div class="col-xs-6 col-sm-6">
+            <input type="radio" id="2017" value="2017" v-model="anio">
+            <label for="2017">2017</label>
+            <input type="radio" id="2012" value="2012" v-model="anio">
+            <label for="2012">2012
+            </label>
+          </div>
+          <div class="col-xs-6 col-sm-6">
+            <label for="genero">Genero
+            </label>
+            <select class="form-control" v-model="genero" name="slct_genero" id="slct_genero">
+                <option value='' selected="selected">Seleccione</option>
+                <option value='M'>Masculino</option>
+                <option value='F'>Femenino</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12">
+            <button type="button" id="btn_sueldos" class="btn btn-primary">Ver Estadisticas</button>
+          </div>
+        </div>
 
         <div class="row">
           <div class="col-xs-12 col-sm-12">
             <canvas id="myChart" width="400" height="400"></canvas>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12">
+            <canvas id="doughnut" width="400" height="400"></canvas>
           </div>
         </div>
         

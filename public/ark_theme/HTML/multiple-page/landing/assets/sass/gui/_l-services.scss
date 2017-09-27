@@ -1,0 +1,404 @@
+/*------------------------------------------------------------------
+    [Landing Services v1]
+------------------------------------------------------------------*/
+
+.l-services-v1 {
+	background: $color-white;
+	box-shadow: 7px 7px 5px 0 lighten($color-tint-light, 1%);
+	overflow: hidden;
+
+	.l-services-v1-link {
+		@include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 3;
+        text-decoration: none;		
+	}
+}
+
+/* Media */
+.l-services-v1 {
+	.l-services-v1-media {
+		min-width: 100px;
+		float: left;
+	}
+
+	.l-services-v1-effect {
+		position: relative;
+		display: inline-block;
+		padding: 5px;
+
+		&:before,
+		&:after {
+			@include border-radius(50%);
+			content: " ";
+			@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+		}
+		
+		&:before {
+			@include position(absolute, $top: -15px, $left: -15px, $right: -15px, $bottom: -15px);
+		}
+
+		&:after {
+			@include position(absolute, $top: -35px, $left: -35px, $right: -35px, $bottom: -35px);
+		}
+	}
+
+	.l-services-v1-icon {
+		position: relative;
+		display: inline-block;
+		@include size(60px);
+		z-index: 2;
+		@include font($size: $font-size-26);
+		color: $color-white;
+		text-align: center;
+		vertical-align: middle;
+		padding: 16px;
+		box-shadow: 0 0 5px 2px rgba(0,188,212,.8);
+		@include border-radius(50%);
+		@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+	}
+
+	&.l-services-v1-icon-one {
+		.l-services-v1-effect {
+			&:before {
+				border: 1px solid rgba(0,188,212,.4);
+			}
+
+			&:after {
+				border: 1px solid rgba(0,188,212,.2);
+			}
+		}
+
+		.l-services-v1-icon {
+			background: $color-base;
+			box-shadow: 0 0 5px 2px rgba(0,188,212,.4);
+		}
+	}
+
+	&.l-services-v1-icon-two {
+		.l-services-v1-effect {
+			&:before {
+				border: 1px solid rgba(178,96,206,.4);
+			}
+
+			&:after {
+				border: 1px solid rgba(178,96,206,.2);
+			}
+		}
+
+		.l-services-v1-icon {
+			background: $color-purple;
+			box-shadow: 0 0 5px 2px rgba(178,96,206,.4);
+		}
+	}
+
+	&.l-services-v1-icon-three {
+		.l-services-v1-effect {
+			&:before {
+				border: 1px solid rgba(88,88,129,.4);
+			}
+
+			&:after {
+				border: 1px solid rgba(88,88,129,.2);
+			}
+		}
+
+		.l-services-v1-icon {
+			background: #585881;
+			box-shadow: 0 0 5px 2px rgba(88,88,129,.4);
+		}
+	}
+
+	&:hover {
+		&.l-services-v1-icon-one,
+		&.l-services-v1-icon-two,
+		&.l-services-v1-icon-three {
+			.l-services-v1-effect {
+				&:before,
+				&:after {
+					@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+				}
+				
+				&:before {
+					border-color: rgba(0,150,136,.4);
+				}
+
+				&:after {
+					border-color: rgba(0,150,136,.2);
+				}
+			}
+
+			.l-services-v1-icon {
+				background: $color-teal;
+				box-shadow: 0 0 5px 2px rgba(0,150,136,.4);
+				@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+			}
+		}
+	}
+}
+
+/* Content */
+.l-services-v1 {
+	.l-services-v1-content {
+		padding: 30px;
+		overflow: hidden;
+	}
+	
+	.l-services-v1-title {
+		@include font($size: $font-size-26);
+		line-height: 1.3;
+		@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+	}
+
+	&.l-services-v1-icon-one {
+		.l-services-v1-title {
+			color: $color-base;
+		}
+	}
+
+	&.l-services-v1-icon-two {
+		.l-services-v1-title {
+			color: $color-purple;
+		}
+	}
+
+	&.l-services-v1-icon-three {
+		.l-services-v1-title {
+			color: #585881;
+		}
+	}
+
+	.l-services-v1-text {
+		line-height: 1.6;
+	}
+
+	&:hover {
+		&.l-services-v1-icon-one,
+		&.l-services-v1-icon-two,
+		&.l-services-v1-icon-three {
+			.l-services-v1-title {
+				color: $color-teal;
+				@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+			}
+		}
+	}
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+	/* Media */
+	.l-services-v1 {
+		.l-services-v1-media {
+			min-width: 100%;
+			float: none;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Services v2]
+------------------------------------------------------------------*/
+
+.l-services-v2 {
+	text-align: center;
+	background: $color-white;
+	box-shadow: 7px 7px 5px 0 lighten($color-tint-light, 1%);
+	padding: 50px 30px;
+
+	.l-services-v2-title {
+		@include font($size: $font-size-26);
+	}
+
+	.l-services-v2-icon-wrap {
+		position: relative;
+		display: inline-block;
+		@include size(120px);
+		background: $color-sky-light;
+		vertical-align: middle;
+		padding: 20px;
+		margin-bottom: 50px;
+		@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+		&:before {
+			@include position(absolute, $top: -20px, $left: -20px, $right: -20px, $bottom: -20px);
+			@include size(160px);
+			border: 1px solid rgba(0,150,136,0);
+			@include border-radius(50%);
+			content: " ";
+			@include transform-scale(0.9,0.9);
+			@include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+		}
+	}
+
+	.l-services-v2-icon {
+		@include size(70px, auto);
+	}
+
+	&:hover {
+		.l-services-v2-icon-wrap {
+			background: $color-teal;
+			@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+			
+			&:before {
+				border-color: rgba(0,150,136,.3);
+				@include transform-scale(1,1);
+				@include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+			}
+		}
+	}
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Services v3]
+------------------------------------------------------------------*/
+
+.l-services-v3 {
+	background: $color-white;
+	box-shadow: 7px 7px 5px 0 lighten($color-tint-light, 1%);
+
+	.l-services-v3-header {
+		background: #4c4c61;
+		padding: 20px;
+
+	    &.l-services-v3-header-img-one,
+	    &.l-services-v3-header-img-two,
+	    &.l-services-v3-header-img-three {
+	    	position: relative;
+	    	z-index: 1;
+
+			&:before {
+		        @include position(absolute, $top: 0, $left: 0);
+		        z-index: -1;
+		        @include size(100%);
+		        content: " ";
+		    }
+	    }
+
+	    &.l-services-v3-header-img-one {
+	    	background: url(../../multiple-page/landing/assets/img/970x647/01.jpg) no-repeat;
+		    background-size: cover;
+			background-position: center center;
+
+			&:before {
+		        @include bg-opacity(#4c4c61, .9);
+		    }
+	    }
+	    &.l-services-v3-header-img-two {
+	    	background: url(../../multiple-page/landing/assets/img/970x647/02.jpg) no-repeat;
+		    background-size: cover;
+			background-position: center center;
+
+			&:before {
+		        @include bg-opacity($color-teal, .9);
+		    }
+	    }
+	    &.l-services-v3-header-img-three {
+	    	background: url(../../multiple-page/landing/assets/img/970x647/03.jpg) no-repeat;
+		    background-size: cover;
+			background-position: center center;
+
+			&:before {
+		        @include bg-opacity(#4c4c61, .9);
+		    }
+	    }
+	}
+
+	.l-services-v3-title {
+		@include font($size: $font-size-26);
+		color: $color-white;
+		margin-bottom: 10px;
+	}
+
+	.l-services-v3-text {
+		color: $color-white;
+		opacity: .7;
+	}
+
+	.l-services-v3-content {
+		padding: 30px 20px;
+	}
+}
+
+/* List */
+.l-services-v3 {
+	.l-services-v3-list {
+		margin-bottom: 0;
+	}
+
+	.l-services-v3-list-item {
+		position: relative;
+		@include font($size: $font-size-18);
+		color: #4c4c61;
+		border-top: 1px solid $color-sky-light;
+		padding-top: 15px;
+		margin-top: 15px;
+
+		&:first-child {
+			border-top: none;
+			padding-top: 0;
+			margin-top: 0;
+		}
+	}
+
+	.l-services-v3-list-link {
+		position: relative;
+		display: block;
+		color: #4c4c61;
+		text-decoration: none;
+
+		&:after {
+			@include position(absolute, $top: 0, $right: 0);
+			@include font($size: $font-size-18, $family: $font-family-font-awesome);
+			color: #4c4c61;
+			content: "\f105";
+		}
+		
+		.l-services-v3-list-icon {
+			@include position(relative, $top: 2px);
+			min-width: 30px;
+			@include font($size: $font-size-18);
+			color: #4c4c61;
+			text-align: center;
+			margin-right: 10px;
+		}
+
+		&:hover {
+			color: $color-teal;
+
+			&:after,
+			.l-services-v3-list-icon {
+				color: $color-teal;
+			}
+		}
+	}
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Services v4]
+------------------------------------------------------------------*/
+
+.l-services-v4 {
+	box-shadow: 7px 7px 7px 1px lighten($color-tint-light, 2%);
+
+	.l-services-v4-img {
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+
+	.l-services-v4-media {
+		text-align: center;
+		background: $color-white;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		padding: 20px;
+	}
+
+	.l-services-v4-title {
+		@include font($size: $font-size-18);
+		margin-bottom: 0;
+	}
+}

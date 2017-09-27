@@ -1,0 +1,126 @@
+/*--------------------------------------------------
+    [Divider]
+----------------------------------------------------*/
+
+%divider {
+    position: relative;
+    width: 100%;
+    @include font($size: $font-size-18);
+    text-align: center;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin: 30px auto;
+
+    %divider-element {
+        position: relative;
+        display: inline-block;
+
+        &:before,
+        &:after {
+            @include position(absolute, $top: 50%);
+            display: block;
+            @include size(2000px, 0);
+            border-top-style: solid;
+            border-top-width: 1px;
+            border-color: lighten($color-grey, 15%);
+            content: " ";
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 15px;
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 15px;
+        }
+    }
+
+    %divider-element-bg {
+        @include font($size: $font-size-14);
+        color: $color-white;
+        background: $color-base;
+        padding: 3px 10px;
+    }
+
+    %divider-icon {
+        @include font($size: $font-size-30);
+        color: $color-base;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Divider v1]
+----------------------------------------------------*/
+
+.divider-v1 {
+    @extend %divider;
+
+    .divider-v1-element {
+        @extend %divider-element;
+    }
+
+    .divider-v1-element-bg {
+        @extend %divider-element-bg;
+    }
+
+    .divider-v1-icon {
+        @extend %divider-icon;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Divider v2]
+----------------------------------------------------*/
+
+.divider-v2 {
+    @extend %divider;
+
+    .divider-v2-element {
+        @extend %divider-element;
+
+        &:before,
+        &:after {
+            border-top-style: dashed;
+            border-top-width: 1px;
+        }
+    }
+
+    .divider-v2-element-bg {
+        @extend %divider-element-bg;
+    }
+
+    .divider-v2-icon {
+        @extend %divider-icon;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Divider v3]
+----------------------------------------------------*/
+
+.divider-v3 {
+    @extend %divider;
+
+    .divider-v3-element {
+        @extend %divider-element;
+
+        &:before,
+        &:after {
+            border-top-style: double;
+            border-top-width: 3px;
+        }
+    }
+
+    .divider-v3-element-bg {
+        @extend %divider-element-bg;
+    }
+
+    .divider-v3-icon {
+        @extend %divider-icon;
+    }
+}

@@ -1,0 +1,229 @@
+/*------------------------------------------------------------------
+    [grey Color Theme]
+------------------------------------------------------------------ */
+
+/* Icon Box v1 */
+.l-icon-box-v1 {
+    .l-icon-box-v1-scroll {
+        &:hover {
+            background: $color-grey;
+        }
+    }
+}
+
+
+/* Landing News v1*/
+.l-news-v1 {
+    .l-news-v1-title {
+        &:before {
+            background: $color-grey;
+        }
+
+        &:hover {
+           color: $color-grey;
+        }
+    }
+}
+
+
+/* Landing Pricing List v2 */
+.l-pricing-list-v2 {
+    .l-pricing-list-v2-checkbox {
+        label {
+            &:before {
+                background: $color-grey;
+            }
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            &:checked {
+                + {
+                    label {
+                        &:after {
+                            box-shadow: 0 0 0 8px rgba(155,155,155,.4);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Landing Promo Block v2 */
+.l-promo-block-v2 {
+    .l-promo-block-v2-video {
+        &:hover {
+            color: $color-grey;
+
+            &:before {
+                background: $color-grey;
+            }
+        }
+    }
+}
+
+
+/* Landing Promo Block v3 */
+.l-promo-block-v3 {
+    .l-promo-block-v3-video-icon {
+        background: $color-grey;
+        
+        &:hover {
+            background: $color-grey-light;
+        }
+    }
+}
+
+
+/* Landing Promo Section v1*/
+.l-promo-section-v1-content {
+    .l-promo-section-v1-icon {
+        color: $color-grey;
+    }
+}
+
+
+/* Services v1 */
+.l-services-v1 {
+    &:hover {
+        &.l-services-v1-icon-one,
+        &.l-services-v1-icon-two,
+        &.l-services-v1-icon-three {
+            .l-services-v1-effect {
+                
+                &:before {
+                    border-color: rgba((155,155,155,.4);
+                }
+
+                &:after {
+                    border-color: rgba((155,155,155,.2);
+                }
+            }
+
+            .l-services-v1-icon {
+                background: $color-grey;
+                box-shadow: 0 0 5px 2px rgba((155,155,155,.4);
+            }
+        }
+    }
+}
+
+
+/* Landing Services v2 */
+.l-services-v2 {
+    .l-services-v2-icon-wrap {
+        &:before {
+            border-color: rgba(155,155,155,0);
+        }
+    }
+
+    &:hover {
+        .l-services-v2-icon-wrap {
+            background: $color-grey;
+
+            &:before {
+                border-color: rgba(155,155,155,.3);
+            }
+        }
+
+        &.l-services-v1-icon-one,
+        &.l-services-v1-icon-two,
+        &.l-services-v1-icon-three {
+            .l-services-v1-title {
+                color: $color-grey;
+            }
+        }
+    }
+}
+
+
+/* Landing Testimonials v1*/
+.l-testimonials-v1 {
+    .l-testimonials-v1-author {
+        &:before {
+            background: $color-grey;
+        }
+
+        &:hover {
+           color: $color-grey;
+        }
+    }
+}
+
+/* Form */
+.l-footer {
+    .l-footer-form {
+        .l-footer-form-btn {
+            &:hover,
+            &:focus,
+            &.focus {
+                background: $color-grey;
+            }
+        }
+    }
+}
+
+/* Button Teal Color */
+.btn-teal {
+    @include buttons($color-grey, $color-white, transparent, $color-grey, 1px, transparent, $color-grey);
+
+    .btn-teal-element-xs {
+        @include buttons-element(transparent, darken($color-grey, 4%), 4px 9px);
+    }
+
+    .btn-teal-element-sm {
+        @include buttons-element(transparent, darken($color-grey, 4%), 7px 11px);
+    }
+
+    .btn-teal-element-md {
+        @include buttons-element(transparent, darken($color-grey, 4%), 8px 13px);
+    }
+
+    .btn-teal-element-lg {
+        @include buttons-element(transparent, darken($color-grey, 4%), 10px 15px);
+    }
+}
+
+/* Buttons Border Teal Color */
+.btn-teal-brd {
+    @include buttons($color-grey, $color-white, transparent, $color-grey, 1px, $color-grey, $color-grey);
+
+    .btn-teal-element-xs {
+        @include buttons-element(transparent, darken($color-grey, 4%), 4px 9px);
+    }
+
+    .btn-teal-element-sm {
+        @include buttons-element(transparent, darken($color-grey, 4%), 7px 11px);
+    }
+
+    .btn-teal-element-md {
+        @include buttons-element(transparent, darken($color-grey, 4%), 8px 13px);
+    }
+
+    .btn-teal-element-lg {
+        @include buttons-element(transparent, darken($color-grey, 4%), 10px 15px);
+    }
+}
+
+/* Button Background Teal Color */
+.btn-teal-bg {
+    @include buttons($color-white, $color-white, $color-grey, $color-grey-light, 1px, transparent, transparent);
+
+    .btn-teal-element-xs {
+        @include buttons-element(darken($color-grey, 4%), transparent, 4px 9px);
+    }
+
+    .btn-teal-element-sm {
+        @include buttons-element(darken($color-grey, 4%), transparent, 7px 11px);
+    }
+
+    .btn-teal-element-md {
+        @include buttons-element(darken($color-grey, 4%), transparent, 8px 13px);
+    }
+
+    .btn-teal-element-lg {
+        @include buttons-element(darken($color-grey, 4%), transparent, 11px 15px);
+    }
+}

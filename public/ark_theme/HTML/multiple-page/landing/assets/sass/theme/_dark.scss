@@ -1,0 +1,192 @@
+/*--------------------------------------------------
+    [Dark Theme]
+----------------------------------------------------*/
+
+
+/*------------------------------------------------------------------
+    [Icon Box v1]
+------------------------------------------------------------------*/
+
+.dark-theme {
+    .l-icon-box-v1 {
+        .l-icon-box-v1-icon {
+            color: $color-white;
+        }
+    }
+}
+
+/*------------------------------------------------------------------
+    [Icon Box v2]
+------------------------------------------------------------------*/
+
+.dark-theme {
+    .l-icon-box-v2 {
+        .l-icon-box-v2-icon {
+            color: $color-white;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Services v1]
+------------------------------------------------------------------*/
+
+.dark-theme {
+    .l-services-v1 {
+        background: $color-dark;
+        box-shadow: 7px 7px 5px 0 lighten($color-dark-light, 1%);
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Services v2]
+------------------------------------------------------------------*/
+
+.dark-theme {
+    .l-services-v2 {
+        background: $color-dark;
+        box-shadow: 7px 7px 5px 0 lighten($color-dark-light, 1%);
+
+        .l-services-v2-icon-wrap {
+            background: $color-dark-light;
+        }
+    }
+}
+
+/*------------------------------------------------------------------
+    [Landing Services v4]
+------------------------------------------------------------------*/
+
+.dark-theme {
+    .l-services-v4 {
+        box-shadow: 7px 7px 7px 1px lighten($color-dark-light, 2%);
+
+        .l-services-v4-media {
+            background: $color-dark;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Landing News v1]
+------------------------------------------------------------------*/
+
+.dark-theme {
+    .l-news-v1 {
+        background: $color-dark;
+        box-shadow: 7px 7px 5px 0 lighten($color-dark-light, 1%);
+
+        .l-news-v1-day {
+            color: $color-sky-light;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Testimonials v1]
+------------------------------------------------------------------*/
+
+.dark-theme {
+    .l-testimonials-v1 {
+        background: $color-dark;
+        box-shadow: 7px 7px 5px 0 lighten($color-dark-light, 1%);
+
+        .l-testimonials-v1-user-picture {
+            border: 3px solid $color-dark-light;
+        }
+
+        .l-testimonials-v1-author {
+            color: $color-white;
+        }
+    }
+}
+
+/*------------------------------------------------------------------
+    [Landing Testimonials v2]
+------------------------------------------------------------------*/
+
+.dark-theme {
+    .l-testimonials-v2 {
+        .l-testimonials-v2-media {
+            background: $color-dark;
+        }
+
+        .l-testimonials-v2-subtext {
+            color: $color-white;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Landing Pricing List v1]
+----------------------------------------------------*/
+
+.dark-theme {
+    .l-pricing-list-v1 {
+        background: $color-dark;
+        box-shadow: 7px 7px 5px 0 lighten($color-dark-light, 1%);
+
+        .l-pricing-list-v1-price-sign,
+        .l-pricing-list-v1-price,
+        .l-pricing-list-v1-subprice,
+        .l-pricing-list-v1-price-info {
+            color: $color-white;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Promo Section v1]
+------------------------------------------------------------------*/
+
+.dark-theme {
+    .l-promo-section-v1-content {
+        .l-promo-section-v1-subtitle {
+            color: $color-sky-light;
+        }
+    }
+
+    .l-promo-section-v1 {
+        .l-promo-section-v1-quote-author {
+            color: $color-sky-light;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Comment Form]
+------------------------------------------------------------------*/
+
+.dark-theme {
+    .l-comment-form {
+        .l-comment-input {
+            background: $color-dark-light;
+
+            &:focus {
+                background: $color-dark;
+                box-shadow: 2px 2px 5px 2px lighten($color-dark-light, 1%);
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Landing Login]
+----------------------------------------------------*/
+
+.dark-theme {
+    .l-login {
+        .l-login-content {
+            background: $color-dark;
+            box-shadow: 0 0 15px 10px lighten($color-dark-light, 2%);
+        }
+    }
+}

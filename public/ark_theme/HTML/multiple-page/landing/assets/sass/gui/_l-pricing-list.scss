@@ -1,0 +1,275 @@
+/*--------------------------------------------------
+    [Landing Pricing List v1]
+----------------------------------------------------*/
+
+.l-pricing-list-v1 {
+    position: relative;
+    background: $color-white;
+    box-shadow: 7px 7px 5px 0 lighten($color-tint-light, 1%);
+    overflow: hidden;
+    padding: 30px;
+
+    .l-pricing-list-v1-title {
+        @include font($size: $font-size-26);
+        margin-bottom: 0;
+    }
+
+    .l-pricing-list-v1-price-sign,
+    .l-pricing-list-v1-price,
+    .l-pricing-list-v1-subprice,
+    .l-pricing-list-v1-price-info {
+        color: $color-dark;
+    }
+
+    .l-pricing-list-v1-price-sign {
+        @include font($size: $font-size-20);
+    }
+
+    .l-pricing-list-v1-price {
+        @include font($size: $font-size-50);
+    }
+
+    .l-pricing-list-v1-subprice {
+        @include font($size: $font-size-30);
+    }
+
+    .l-pricing-list-v1-price-info {
+        position: relative;
+        @include font($size: $font-size-16);
+        
+        &:before {
+            @include font($size: $font-size-22);
+            content: "/";
+            margin-right: 3px;
+        }
+    }
+}
+
+/* Effect */
+.l-pricing-list-v1 {
+    .l-pricing-list-v1-effect-wrap {
+        @include position(absolute, $top: 2px, $right: 2px);
+    }
+
+    .l-pricing-list-v1-effect {
+        position: relative;
+        display: inline-block;
+
+        &:before,
+        &:after {
+            @include border-radius(50%);
+            content: " ";
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+        
+        &:before {
+            @include position(absolute, $top: -15px, $left: -15px, $right: -15px, $bottom: -15px);
+        }
+
+        &:after {
+            @include position(absolute, $top: -35px, $left: -35px, $right: -35px, $bottom: -35px);
+        }
+    }
+
+    .l-pricing-list-v1-icon {
+        position: relative;
+        display: inline-block;
+        @include size(60px);
+        z-index: 2;
+        @include font($size: $font-size-26);
+        color: $color-white;
+        text-align: center;
+        vertical-align: middle;
+        padding: 16px;
+        box-shadow: 0 0 5px 2px rgba(0,188,212,.8);
+        @include border-radius(50%);
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+    }
+
+    .l-pricing-list-v1-effect {
+        &.l-pricing-list-v1-effect-one {
+            &:before {
+                border: 1px solid rgba(0,188,212,.4);
+            }
+
+            &:after {
+                border: 1px solid rgba(0,188,212,.2);
+            }
+            
+            .l-pricing-list-v1-icon {
+                background: $color-base;
+                box-shadow: 0 0 5px 2px rgba(0,188,212,.4);
+            }
+        }
+    }
+
+    .l-pricing-list-v1-effect {
+        &.l-pricing-list-v1-effect-two {
+            &:before {
+                border: 1px solid rgba(178,96,206,.4);
+            }
+
+            &:after {
+                border: 1px solid rgba(178,96,206,.2);
+            }
+            
+            .l-pricing-list-v1-icon {
+                background: $color-purple;
+                box-shadow: 0 0 5px 2px rgba(178,96,206,.4);
+            }
+        }
+    }
+
+    .l-pricing-list-v1-effect {
+        &.l-pricing-list-v1-effect-three {
+            &:before {
+                border: 1px solid rgba(88,88,129,.4);
+            }
+
+            &:after {
+                border: 1px solid rgba(88,88,129,.2);
+            }
+            
+            .l-pricing-list-v1-icon {
+                background: #585881;
+                box-shadow: 0 0 5px 2px rgba(88,88,129,.4);
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Landing Pricing List v2]
+----------------------------------------------------*/
+
+.l-pricing-list-v2-bg {
+    background: #4c4c61;
+}
+
+.l-pricing-list-v2 {
+    position: relative;
+    text-align: center;
+    background: darken(#4c4c61, 3%);
+    overflow: hidden;
+    padding: 60px 30px;
+
+    .l-pricing-list-v2-title {
+        @include font($size: $font-size-26);
+        color: $color-white;
+        margin-bottom: 5px;
+    }
+
+    .l-pricing-list-v2-text {
+        color: $color-white;
+        opacity: .7;
+    }
+
+    .l-pricing-list-v2-price-sign,
+    .l-pricing-list-v2-price,
+    .l-pricing-list-v2-subprice,
+    .l-pricing-list-v2-price-info {
+        color: $color-white;
+    }
+
+    .l-pricing-list-v2-price-sign {
+        @include font($size: $font-size-20);
+    }
+
+    .l-pricing-list-v2-price {
+        @include font($size: $font-size-50);
+    }
+
+    .l-pricing-list-v2-subprice {
+        @include font($size: $font-size-30, $weight: $font-weight-300);
+    }
+
+    .l-pricing-list-v2-price-info {
+        position: relative;
+        @include font($size: $font-size-16, $weight: $font-weight-300);
+        
+        &:before {
+            @include font($size: $font-size-22);
+            content: "/";
+            margin-right: 3px;
+        }
+    }
+}
+
+/* Checkbox */
+.l-pricing-list-v2 {
+    .l-pricing-list-v2-checkbox {
+        display: block;
+        margin-bottom: 25px;
+
+        label {
+            position: relative;
+            vertical-align: middle;
+
+            &:before {
+                @include size(35px);
+                display: inline-block;
+                background: $color-teal;
+                @include border-radius(50%);
+                content: " ";
+                @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+            }
+            
+            &:after {
+                @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+                @include size(35px);
+                display: inline-block;
+                @include border-radius(50%);
+                box-shadow: 0 0 0 8px transparent;
+                content: " ";
+            }
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            position: absolute;
+            z-index: 1;
+            @include size(35px);
+            @include border-radius(50%);
+            opacity: 0;
+            cursor: pointer;
+
+            &:focus {
+                + {
+                    label {
+                        &:before {
+                            outline: none;
+                        }
+                    }
+                }
+            }
+
+            &:checked {
+                + {
+                    label {
+                        &:after {
+                            box-shadow: 0 0 0 8px rgba(0,150,136,.4);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Button Active */
+.l-pricing-list-v2 {
+    .l-pricing-list-v2-btn {
+        visibility: hidden;
+        opacity: 0;
+        @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+    }
+    
+    &.is-selected {
+        .l-pricing-list-v2-btn {
+            visibility: visible;
+            opacity: 1;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+        }
+    }
+}

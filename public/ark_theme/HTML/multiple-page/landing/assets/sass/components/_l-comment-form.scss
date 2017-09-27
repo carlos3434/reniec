@@ -1,0 +1,20 @@
+/*------------------------------------------------------------------
+    [Landing Comment Form]
+------------------------------------------------------------------*/
+
+.l-comment-form {
+	.l-comment-input {
+		border: none;
+		background: $color-sky-light;
+		padding: 10px 20px;
+
+		&.l-comment-input-height {
+			height: 48px;
+		}
+
+		&:focus {
+			background: $color-white;
+			box-shadow: 2px 2px 5px 2px lighten($color-tint-light, 1%);
+		}
+	}
+}

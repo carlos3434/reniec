@@ -1,0 +1,49 @@
+/*--------------------------------------------------
+    [Landing Login]
+----------------------------------------------------*/
+
+.l-login {
+    .l-login-content {
+        max-width: 400px;
+        text-align: center;
+        background: $color-white;
+        box-shadow: 0 0 15px 10px lighten($color-tint-light, 2%);
+        padding: 50px;
+    }
+
+    .l-login-logo {
+        @include size(100px, auto);
+    }
+
+    .forget-form,
+    .register-form {
+        display: none;
+    }
+}
+
+/* Error */
+.l-login {
+    .form-control {
+        &.error {
+            border-color: $color-red;
+            margin-bottom: 5px;
+        }
+    }
+
+    .error {
+        display: block;
+        @include font($size: $font-size-13, $style: italic, $weight: $font-weight-300);
+        color: $color-red;
+        text-align: left;
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .l-login {
+        .l-login-content {
+            width: 100%;
+            padding: 50px 20px;
+        }
+    }        
+}

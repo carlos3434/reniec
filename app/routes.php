@@ -15,6 +15,9 @@
 Route::get('empleabilidad', function () {
     return View::make('web.empleabilidad');
 });
+Route::get('empleabilidad2', function () {
+    return View::make('web.empleabilidad2');
+});
 Route::get('home', function () {
     return View::make('web.home');
 });

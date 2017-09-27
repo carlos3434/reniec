@@ -1,0 +1,121 @@
+/*--------------------------------------------------
+    [Clients v1]
+----------------------------------------------------*/
+
+.clients-v1 {
+    margin-bottom: 0;
+
+    .clients-v1-item {
+        position: relative;
+        @include size(135px);
+        overflow: hidden;
+
+        .clients-v1-img {
+            display: block;
+            @include size(135px);
+            text-align: center;
+        }
+        
+        .clients-v1-img-default {
+            opacity: 1;
+            background: $color-dark;
+            @include position(absolute, $top: 0, $left: 0);
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+
+        .clients-v1-img-active {
+            opacity: 0;
+            @include position(absolute, $top: -100%, $left: 0);
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+
+        &:hover {
+            .clients-v1-img-default {
+                opacity: 0;
+                @include position(absolute, $top: 100%, $left: 0);
+                @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+            }
+
+            .clients-v1-img-active {
+                opacity: 1;
+                @include position(absolute, $top: 0, $left: 0);
+                @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Clients v2]
+----------------------------------------------------*/
+
+.clients-v2 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background: url(../../assets/img/1920x1080/22.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity($color-dark, .5);
+        content: " ";
+    }
+
+    .clients-v2-content {
+        padding: 15px;
+
+        .clients-v2-img {
+            @include size(150px);
+        }
+    }
+
+    .clients-v2-border-left,
+    .clients-v2-border-right,
+    .clients-v2-border-bottom {
+        position: relative;
+
+        &:after {
+            @include bg-opacity($color-white, .4);
+            content: " ";
+        }
+    }
+
+    .clients-v2-border-left {
+        &:after {
+            @include position(absolute, $top: 11px, $right: 100%);
+            @include size(1px, 91%);
+        }
+    }
+
+    .clients-v2-border-right {
+        &:after {
+            @include position(absolute, $top: 0, $right: 100%);
+            @include size(1px, 91%);
+        }
+    }
+
+    .clients-v2-border-bottom {
+        &:after {
+            @include position(absolute, $bottom: 0, $right: -3px);
+            @include size(103.5%, 1px);
+        }
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .clients-v2 {
+        .clients-v2-border-left,
+        .clients-v2-border-right,
+        .clients-v2-border-bottom {
+            &:after {
+                background: 0;
+            }
+        }
+    }
+}

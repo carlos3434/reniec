@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js bg-color-sky-light">
+<!-- HEAD -->
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Ark - Responsive Multi-Purpose Theme</title>
+<meta name="keywords" content="HTML5 Theme" />
+<meta name="description" content="Ark - Responsive Multi-Purpose Template">
+<meta name="author" content="prothemes.net">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- GLOBAL MANDATORY STYLES -->
+<link href='https://fonts.googleapis.com/css?family=Hind:400,500,600,700,300' rel='stylesheet' type='text/css'>
+<link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/plugins/et-line/et-line.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+
+<!-- BEGIN THEME PLUGINS STYLE -->
+<link href="../../assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/style-switcher.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME PLUGINS STYLE -->
+
+<!-- GLOBAL THEME STYLES -->
+<link href="../../assets/css/global.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL THEME STYLES -->
+
+<!-- THEME STYLES -->
+<link href="assets/css/landing.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
+
+<!-- GLOBAL THEME -->
+<link href="../../assets/css/theme/dark.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/theme/teal.css" rel="stylesheet" type="text/css" id="style-color-base"/>
+<!-- END GLOBAL THEME -->
+
+<!-- THEME -->
+<link href="assets/css/theme/dark.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/theme/teal.css" rel="stylesheet" type="text/css" id="style-color"/>
+<!-- END THEME -->
+
+<!-- FAVICON -->
+<link rel="shortcut icon" href="favicon.ico"/>
+<!-- END FAVICON -->
+</head>
+<!-- END HEAD -->
+<!-- BODY -->
+<body class="bg-color-sky-light">
+
+<!-- WRAPPER -->
+<div class="wrapper animsition">
+    <!--========== STYLE SWITCHER ==========-->
+    <div class="style-switcher">
+        <a class="style-switcher-btn hidden-xs" href="javascript:void(0);">
+            <i class="fa fa-cog fa-animation"></i>
+        </a>
+        <div class="style-switcher-body">
+            <!-- Theme Colors -->
+            <h3 class="style-switcher-title">Theme Colors</h3>
+            <ul class="list-unstyled margin-b-30">
+                <li class="color-options theme-base theme-active" data-style="base" data-header="light"></li>
+                <li class="color-options theme-blue" data-style="blue" data-header="light"></li>
+                <li class="color-options theme-blue-grey" data-style="blue-grey" data-header="light"></li>
+                <li class="color-options theme-gold" data-style="gold" data-header="light"></li>
+                <li class="color-options theme-green" data-style="green" data-header="light"></li>
+                <li class="color-options theme-grey" data-style="grey" data-header="light"></li>
+                <li class="color-options theme-pink" data-style="pink" data-header="light"></li>
+                <li class="color-options theme-purple" data-style="purple" data-header="light"></li>
+                <li class="color-options theme-red" data-style="red" data-header="light"></li>
+                <li class="color-options theme-teal" data-style="teal" data-header="light"></li>
+            </ul>
+            <!-- End Theme Colors -->
+
+            <!-- Theme Skins -->
+            <h3 class="style-switcher-title">Theme Skins</h3>
+            <div class="row space-row-5">
+                <div class="col-xs-6">
+                    <button data-skins="default" class="btn-dark-bg btn-base-xs btn-block radius-3 apply-light-skins is-active">Light</button>
+                </div>
+                <div class="col-xs-6">
+                    <button data-skins="dark" class="btn-dark-bg btn-base-xs btn-block radius-3 apply-dark-skins">Dark</button>
+                </div>
+            </div>            
+            <!-- End Theme Skins -->
+        </div>
+    </div>
+    <!--========== END STYLE SWITCHER ==========-->
+    
+    <!--========== LANDING PAGE CONTENT ==========-->
+    <!-- Landing Login -->
+    <div class="l-login center-block">
+        <div class="content-md container-sm">
+            <!-- Login Content -->
+            <div class="l-login-content center-block radius-5 margin-b-30">
+                <!-- Login Form Logo -->
+                <div class="margin-b-40">
+                    <a href="index.html">
+                        <img class="l-login-logo" src="assets/img/logo-default.png" alt="Ark">
+                    </a>
+                </div>
+                <!-- End Login Form Logo -->
+
+                <!-- Login Form -->
+                <form class="login-form" action="index.html" method="post">
+                    <div class="form-group">
+                        <input class="form-control radius-50" type="text" autocomplete="on" placeholder="Username" name="username"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control radius-50" type="password" autocomplete="on" placeholder="Password" name="password"/>
+                    </div>
+                    <div class="margin-b-20">
+                        <button type="submit" class="btn-base-bg btn-base-sm btn-block radius-50">Sign In</button>
+                    </div>
+                    <p class="font-size-14">
+                        <a href="javascript:;" id="forgot-password">Forgot Password?</a>
+                    </p>
+                    <p>
+                        Don't have account?
+                        <a href="javascript:;" id="go-to-signup-form-btn">Signup</a>
+                    </p>
+                </form>
+                <!-- End Login Form -->
+
+                <!-- Forgot Password Form -->
+                <form class="forgot-password-form forgot-password-form display-none" action="index.html" method="post">
+                    <div class="form-group">
+                        <input class="form-control radius-50" type="text" autocomplete="on" placeholder="Email" name="email"/>
+                    </div>
+                    <div class="margin-b-20">
+                        <button type="submit" class="btn-base-bg btn-base-sm btn-block radius-50">Reset Password</button>
+                    </div>
+                    <div class="create-account">
+                        <p>
+                            Already have account?
+                            <a href="javascript:;" id="back-btn">Login</a>
+                        </p>
+                    </div>
+                </form>
+                <!-- End Forgot Password Form -->
+
+                <!-- Signup Form -->
+                <form class="signup-form signup-form display-none" action="index.html" method="post">
+                    <div class="form-group">
+                        <input class="form-control radius-50" type="text" id="name" placeholder="Name" name="name"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control radius-50" type="text" id="email" placeholder="Email" name="email"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control radius-50" type="text" autocomplete="on" id="username" placeholder="Username" name="username"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control radius-50" type="password" autocomplete="on" id="signup_password" placeholder="Password" name="password"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control radius-50" type="password" autocomplete="on" id="confirm_password" placeholder="Confirm Password" name="confirm_password"/>
+                    </div>
+                    <div class="margin-b-30">
+                        <p class="font-size-14">
+                            By signing up you agree to the
+                            <a href="javascript:;">Terms &amp; Conditions</a>
+                            and
+                            <a href="javascript:;">Privacy &amp; Policy</a>
+                        </p>
+                    </div>
+                    <div class="margin-b-20">
+                        <button type="submit" id="signup-submit-btn" class="btn-base-bg btn-base-sm btn-block radius-50">Sign Up</button>
+                    </div>
+                    <p>
+                        Already have account?
+                        <a href="javascript:;" id="back-to-login-form-btn">Login</a>
+                    </p>
+                </form>
+                <!-- End Signup Form -->
+            </div>
+            <!-- End Login Content -->
+
+            <p class="font-size-14 margin-b-0">&#169; 2016 Prothemes. All Rights Reserved.</p>
+        </div>
+        <!-- End Landing Login -->
+    </div>
+    <!-- End Landing Login -->
+    <!--========== END LANDING PAGE CONTENT ==========-->
+</div>
+<!-- END WRAPPER -->
+
+<!-- Sidebar Content Overlay -->
+<div class="sidebar-content-overlay"></div>
+<!-- End Sidebar Content Overlay -->
+
+<!--========== JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) ==========-->
+<!--[if lt IE 9]>
+<script src="../../assets/plugins/html5shiv.js"></script>
+<script src="../../assets/plugins/respond.min.js"></script>
+<![endif]-->
+<!-- CORE PLUGINS -->
+<script type="text/javascript" src="../../assets/plugins/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/jquery.migrate.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- END CORE PLUGINS -->
+
+<!-- PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="../../assets/plugins/jquery.back-to-top.js"></script>
+<script type="text/javascript" src="../../assets/plugins/jquery.smooth-scroll.js"></script>
+<script type="text/javascript" src="../../assets/plugins/jquery.animsition.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/jquery.wow.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/validation/jquery.validate.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/validation/additional-methods.min.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+
+<!-- GLOBAL PAGE LEVEL SCRIPTS -->
+<script type="text/javascript" src="../../assets/scripts/app.js"></script>
+<script type="text/javascript" src="../../assets/scripts/components/style-switcher.js"></script>
+<script type="text/javascript" src="../../assets/scripts/components/animsition.js"></script>
+<script type="text/javascript" src="../../assets/scripts/components/wow.js"></script>
+<script type="text/javascript" src="../../assets/scripts/components/login-form.js"></script>
+<!-- END GLOBAL PAGE LEVEL SCRIPTS -->
+
+<!-- LANDING PAGE LEVEL SCRIPTS -->
+<script type="text/javascript" src="assets/scripts/landing.js"></script>
+<!-- END LANDING PAGE LEVEL SCRIPTS -->
+<!--========== END JAVASCRIPTS ==========-->
+</body>
+<!-- END BODY -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74599804-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</html>

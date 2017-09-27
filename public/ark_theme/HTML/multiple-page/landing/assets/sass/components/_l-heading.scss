@@ -1,0 +1,28 @@
+/*------------------------------------------------------------------
+  	[Landing Heading v1]
+------------------------------------------------------------------*/
+
+.l-heading-v1 {
+    .l-heading-v1-title {
+        @include font($size: $font-size-36);
+        line-height: 1.2;
+    }
+
+    .l-heading-v1-text {
+        @include font($size: $font-size-18);
+        margin-bottom: 5px;
+    }
+}
+
+/* White */
+.l-heading-v1 {
+    &.l-heading-v1-white {
+        .l-heading-v1-title {
+            color: $color-white;
+        }
+
+        .l-heading-v1-text {
+            color: $color-white;
+        }
+    }
+}

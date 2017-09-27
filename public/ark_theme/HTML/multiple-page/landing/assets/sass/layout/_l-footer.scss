@@ -1,0 +1,200 @@
+/*------------------------------------------------------------------
+    [Landing Footer v2]
+------------------------------------------------------------------*/
+
+.l-footer {
+    background: #4c4c61;
+
+    .l-footer-top-space {
+        padding-top: 80px;
+    }
+
+    .l-footer-title {
+        @include font($size: $font-size-24);
+        color: $color-white;
+    }
+
+    .l-footer-text {
+        color: $color-white;
+        opacity: .7;   
+    }
+
+    .l-footer-list {
+        margin-bottom: 0;
+
+        .l-footer-list-item {
+            padding: 3px 0;
+            color: $color-white;
+            opacity: .7;
+        }
+
+        .l-footer-list-link {
+            position: relative;
+            color: $color-white;
+            opacity: .7;
+            text-decoration: none;
+
+            &:before {
+                @include position(absolute, $bottom: 0, $left: 0);
+                @include size(0, 1px);
+                background: $color-white;
+                content: " ";
+                @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+            }
+
+            &:hover {
+                color: $color-white;
+                opacity: 1;
+
+                &:before {
+                    @include position(absolute, $bottom: 0, $left: 0);
+                    @include size(100%, 1px);
+                    @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+                }
+            }
+        }
+    }
+}
+
+/* Form */
+.l-footer {
+    .l-footer-form {
+        position: relative;
+
+        .l-footer-form-input {
+            color: $color-white;
+            border: none;
+            background: darken(#4c4c61, 2%);
+            @include placeholder($color-white);
+            padding: 7px 20px;
+
+            &:focus {
+                background: darken(#4c4c61, 3%);
+            }
+        }
+
+        .l-footer-form-btn {
+            @include position(absolute, $top: 5px, $right: 6px);
+            @include size(30px);
+            display: inline-block;
+            line-height: $line-height-base;
+            color: $color-dark;
+            text-align: center;
+            background: $color-white;
+            background-image: none;
+            border: none;
+            white-space: nowrap;
+            vertical-align: middle;
+
+            .i-footer-form-btn-icon {
+                padding: 3px;
+            }
+
+            &:focus,
+            &:active:focus,
+            &.active:focus,
+            &.focus,
+            &:active.focus,
+            &.active.focus {
+                outline: none;
+            }
+
+            &:hover {
+                @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+                .i-footer-form-btn-icon {
+                    @include animation(toRightFromLeft .3s forwards);
+                }
+            }
+
+            &:hover,
+            &:focus,
+            &.focus {
+                color: $color-white;
+                background: $color-teal;
+                text-decoration: none;
+            }
+
+            &:active,
+            &.active {
+                background-image: none;
+                outline: 0;
+            }
+        }
+    }
+}
+
+@include keyframes(toRightFromLeft) {
+    49% {
+        @include translate3d(100%,0,0);
+    }
+    50% {
+        opacity: 0;
+        @include translate3d(-100%,0,0);
+    }
+    51% {
+        opacity: 1;
+    }
+}
+
+/* Copyright */
+.l-footer {
+    .l-footer-copyright {
+        padding: 30px 0;
+	}
+
+    .l-footer-copyright-text {
+        @include font($size: $font-size-14);
+        color: $color-white;
+        opacity: .3;
+    }
+
+    .l-footer-back-to-top {
+        @include position(relative, $top: -5px);
+        float: right;
+        @include font($size: $font-size-14);
+        color: $color-white;
+        line-height: $line-height-base;
+        opacity: .3;
+        padding: 5px;
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+        &:after {
+            @include size(25px);
+            display: inline-block;
+            @include font($size: $font-size-16, $family: $font-family-font-awesome);
+            color: $color-white;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,.3);
+            @include border-radius(50%);
+            vertical-align: middle;
+            content: "\f106";
+            margin-left: 10px;
+        }
+
+        &:hover {
+            opacity: 1;
+            background: inherit;
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+
+        &:focus,
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    /* Copyright */
+    .l-footer {
+        .l-footer-copyright {
+            text-align: center;
+        }
+
+        .l-footer-back-to-top {
+            float: none;
+        }
+    }
+}

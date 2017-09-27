@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!-- HEAD -->
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Ark - Responsive Multi-Purpose Theme</title>
+<meta name="keywords" content="HTML5 Theme" />
+<meta name="description" content="Ark - Responsive Multi-Purpose Template">
+<meta name="author" content="prothemes.net">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- GLOBAL MANDATORY STYLES -->
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,700,500,300,300italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/et-line/et-line.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+
+<!-- BEGIN THEME PLUGINS STYLE -->
+<!-- END THEME PLUGINS STYLE -->
+
+<!-- THEME STYLES -->
+<link href="assets/css/global.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
+
+<!-- THEME -->
+<link href="assets/css/theme/dark.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/theme/base.css" rel="stylesheet" type="text/css" id="style-color"/>
+<!-- END THEME -->
+
+<!-- BEGIN JQUERY -->
+<script type="text/javascript" src="assets/plugins/jquery.min.js"></script>
+<!-- END JQUERY -->
+
+<!-- FAVICON -->
+<link rel="shortcut icon" href="favicon.ico"/>
+<!-- END FAVICON -->
+</head>
+<!-- END HEAD -->
+<!-- BODY -->
+<body>
+
+<!-- WRAPPER -->
+<div class="wrapper animsition">   
+    <!--========== PAGE CONTENT ==========-->
+    <!-- Login -->
+    <div class="content-sm container center-block">
+        <!-- Login -->
+        <div class="login">
+            <!-- Login Form Logo -->
+            <div class="margin-b-50">
+                <a href="index.html">
+                    <img class="login-form-logo" src="assets/img/logo-default-white.png" alt="Ark">
+                </a>
+            </div>
+            <!-- End Login Form Logo -->
+
+            <div class="login-content radius-3 margin-b-30">
+                <!-- Login Form -->
+                <form class="login-form" action="index.html" method="post">
+                    <div class="margin-b-30">
+                        <h1 class="login-form-title">Login</h1>
+                        <p>Your credentials</p>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" autocomplete="on" placeholder="Username" name="username"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" autocomplete="on" placeholder="Password" name="password"/>
+                    </div>
+                    <div class="login-form-actions">
+                        <div class="checkbox pull-left">
+                            <input id="checkbox" type="checkbox" name="remember" value="1" checked>
+                            <label for="checkbox">
+                                Remember me
+                            </label>
+                        </div>
+                        <a href="javascript:;" id="forgot-password" class="login-form-forgot">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn-base-bg btn-base-sm btn-block radius-3 margin-b-30">Login</button>
+                    <p>
+                        Don't have account?
+                        <a href="javascript:;" id="go-to-signup-form-btn">Signup</a>
+                    </p>
+                </form>
+                <!-- End Login Form -->
+
+                <!-- Forgot Password Form -->
+                <form class="forgot-password-form display-none" action="index.html" method="post">
+                    <div class="margin-b-30">
+                        <h1 class="login-form-title">Forgot Password?</h1>
+                        <p>Enter your e-mail address to reset your password.</p>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" autocomplete="on" placeholder="Email" name="email"/>
+                    </div>
+                    <button type="submit" class="btn-base-bg btn-base-sm btn-block radius-3 margin-b-30">Reset Password</button>
+                    <div class="create-account">
+                        <p>
+                            Already have account?
+                            <a href="javascript:;" id="back-btn">Login</a>
+                        </p>
+                    </div>
+                </form>
+                <!-- End Forgot Password Form -->
+
+                <!-- Registration Form -->
+                <form class="signup-form display-none" action="index.html" method="post">
+                    <div class="margin-b-30">
+                        <h1 class="login-form-title">Signup</h1>
+                        <p>Join our community</p>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="name" placeholder="Name" name="name"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="email" placeholder="Email" name="email"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" autocomplete="on" id="username" placeholder="Username" name="username"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" autocomplete="on" id="signup_password" placeholder="Password" name="password"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" autocomplete="on" id="confirm_password" placeholder="Confirm Password" name="confirm_password"/>
+                    </div>
+                    <div class="margin-b-30">
+                        <p class="font-size-13">
+                            By signing up you agree to the
+                            <a href="javascript:;">Terms &amp; Conditions</a>
+                            and
+                            <a href="javascript:;">Privacy &amp; Policy</a>
+                        </p>
+                    </div>
+                    <button type="submit" id="signup-submit-btn" class="btn-base-bg btn-base-sm btn-block radius-3 margin-b-30">Create Account</button>
+                    <p>
+                        Already have account?
+                        <a href="javascript:;" id="back-to-login-form-btn">Login</a>
+                    </p>
+                </form>
+                <!-- End Registration Form -->
+            </div>
+
+            <p class="color-white">&#169; 2016 Prothemes. All Rights Reserved.</p>
+        </div>
+        <!-- End Login -->
+    </div>
+    <!-- End Login -->
+    <!--========== END PAGE CONTENT ==========-->
+</div>
+<!-- END WRAPPER -->
+
+<!--========== JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) ==========-->
+<!-- CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="assets/plugins/html5shiv.js"></script>
+<script src="assets/plugins/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="assets/plugins/jquery.migrate.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- END CORE PLUGINS -->
+
+<!-- PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="assets/plugins/jquery.smooth-scroll.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery.animsition.min.js"></script>
+<script type="text/javascript" src="assets/plugins/validation/jquery.validate.min.js"></script>
+<script type="text/javascript" src="assets/plugins/validation/additional-methods.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery.backstretch.min.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+
+<!-- PAGE LEVEL SCRIPTS -->
+<script type="text/javascript" src="assets/scripts/app.js"></script>
+<script type="text/javascript" src="assets/scripts/components/animsition.js"></script>
+<script type="text/javascript" src="assets/scripts/components/login-form.js"></script>
+<script type="text/javascript">
+    $.backstretch([
+        "assets/img/1920x1080/30.jpg",
+        "assets/img/1920x1080/17.jpg"
+    ], {duration: 3000, fade: 750});
+</script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<!--========== END JAVASCRIPTS ==========-->
+</body>
+<!-- END BODY -->
+
+</html>

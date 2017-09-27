@@ -1,0 +1,86 @@
+/*------------------------------------------------------------------
+    [Icon Box v1]
+------------------------------------------------------------------*/
+
+.l-icon-box-v1 {
+	text-align: center;
+
+	.l-icon-box-v1-icon {
+		display: inline-block;
+		@include font($size: $font-size-50);
+		color: $color-dark;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.l-icon-box-v1-title {
+		@include font($size: $font-size-26);
+		margin-bottom: 10px;
+	}
+
+	.l-icon-box-v1-scroll {
+		display: inline-block;
+		@include size(35px);
+		color: $color-dark;
+		text-align: center;
+		background: $color-sky-light;
+		margin-bottom: 20px;
+		padding: 8px;
+		@include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+		.l-icon-box-v1-scroll-icon {
+			@include font($size: $font-size-22);
+		}
+
+		&:hover {
+			color: $color-white;
+			background: $color-teal;
+			@include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+	        .l-icon-box-v1-scroll-icon {
+	            @include animation(toBottomFromTop .3s forwards);
+	        }
+	    }
+	}
+}
+
+@include keyframes(toBottomFromTop) {
+    49% {
+        @include translate3d(0,100%,0);
+    }
+    50% {
+        opacity: 0;
+        @include translate3d(0,-100%,0);
+    }
+    51% {
+        opacity: 1;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Icon Box v2]
+------------------------------------------------------------------*/
+
+.l-icon-box-v2 {
+	display: table;
+
+	.l-icon-box-v2-col {
+		display: table-cell;
+		vertical-align: middle;
+
+		&.l-icon-box-v2-col-p-l {
+			padding-left: 20px;
+		}
+	}
+
+	.l-icon-box-v2-icon {
+		@include font($size: 40px);
+		color: $color-dark;
+	}
+
+	.l-icon-box-v2-title {
+		@include font($size: $font-size-18);
+		margin-bottom: 0;
+	}
+}

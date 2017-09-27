@@ -1,0 +1,484 @@
+/*------------------------------------------------------------------
+    [Landing Promo Block v1]
+------------------------------------------------------------------*/
+
+.l-promo-block-v1 {
+	text-align: center;
+	overflow: hidden;
+	
+	.l-promo-block-v1-banner {
+		position: relative;
+		z-index: 1;
+		background: url(../../multiple-page/landing/assets/img/1920x1080/01.jpg) no-repeat;
+		background-size: cover;
+		background-position: center center;
+
+		&:before {
+			@include position(absolute, $top: 0, $left: 0);
+			@include size(100%);
+			z-index: -1;
+			@include bg-opacity(#4c4c61, .7);
+			content: " ";
+		}
+	}
+
+	.l-promo-block-v1-content {
+		@include gradient(rgba(76,76,97,0), rgba(76,76,97,.97));
+	}
+
+	.l-promo-block-v1-title {
+		@include font($size: $font-size-50);
+		color: $color-white;
+		line-height: 1.2;
+	}
+
+	.l-promo-block-v1-text {
+		display: block;
+		max-width: 600px;
+		@include font($size: $font-size-20, $style: italic);
+		color: $color-white;
+		line-height: 1.3;
+		text-align: center;
+		margin: 0 auto;
+	}
+}
+
+/* Video */
+.l-promo-block-v1 {
+	.l-promo-block-v1-video {
+		text-decoration: none;
+	}
+
+	.l-promo-block-v1-video-effect {
+		position: relative;
+		display: inline-block;
+
+		&:before,
+		&:after {
+			@include border-radius(50%);
+			content: " ";
+			@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+		}
+		
+		&:before {
+			@include position(absolute, $top: -15px, $left: -15px, $right: -15px, $bottom: -15px);
+			border: 1px solid rgba(255,255,255,.4);
+		}
+
+		&:after {
+			@include position(absolute, $top: -35px, $left: -35px, $right: -35px, $bottom: -35px);
+			border: 1px solid rgba(255,255,255,.1);
+		}
+	}
+
+	.l-promo-block-v1-video-icon {
+		position: relative;
+		display: inline-block;
+		@include size(69px);
+		z-index: 2;
+		@include font($size: $font-size-70);
+		color: $color-white;
+		text-align: center;
+		box-shadow: 0 0 5px 2px rgba(255,255,255,.4);
+		vertical-align: middle;
+		@include border-radius(50%);
+		@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+	}
+}
+
+/* Showcase */
+.l-promo-block-v1 {
+	.l-promo-block-v1-showcase {
+		background: #4c4c61;
+	}
+}
+
+/* Media Queries below 550px */
+@media (max-width: 550px) {
+	.l-promo-block-v1 {
+		.l-promo-block-v1-title {
+			@include font($size: $font-size-36);
+		}
+
+		.l-promo-block-v1-text {
+			@include font($size: $font-size-18);
+		}
+	}
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Promo Block v2]
+------------------------------------------------------------------*/
+
+.l-promo-block-v2 {
+	position: relative;
+	background: #4c4c61;
+	overflow: hidden;
+	padding: 150px 0 80px;
+
+	.l-promo-block-v2-title {
+		@include font($size: $font-size-50);
+		color: $color-white;
+		line-height: 1.2;
+	}
+
+	.l-promo-block-v2-text {
+		@include font($size: $font-size-18);
+		color: $color-white;
+		line-height: 1.3;
+	}
+
+	.l-promo-block-v2-video {
+		position: relative;
+		@include font($size: $font-size-16);
+		color: $color-white;
+		text-decoration: none;
+        padding-bottom: 8px;
+		@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+		&:before {
+            @include position(absolute, $bottom: 0, $left: 0);
+            @include size(0, 2px);
+            background: $color-white;
+            content: " ";
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+		
+		.l-promo-block-v2-video-icon {
+			@include position(relative, $top: 5px);
+			display: inline-block;
+			@include font($size: $font-size-30);
+			color: $color-white;
+			padding-right: 6px;
+		}
+
+		&:hover {
+			color: $color-teal;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+			&:before {
+                @include position(absolute, $bottom: 0, $left: 0);
+                @include size(100%, 2px);
+                background: $color-teal;
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+		}
+	}
+
+	.l-promo-block-v2-img-wrap {
+		height: 370px;
+	}
+	
+	.l-promo-block-v2-img-one {
+		@include position(absolute, $top: 0, $left: 0);
+	}
+
+	.l-promo-block-v2-img-two {
+		@include position(absolute, $top: 0, $left: 0);
+	}
+}
+
+/* Media Queries below 480px */
+@media (min-width: $screen-xs-min) {
+	.l-promo-block-v2 {
+		.l-promo-block-v2-btn {
+			margin-right: 10px;
+		}
+	}
+}
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+	.l-promo-block-v2 {
+		padding-top: 100px;
+	}
+
+	/* Image Wrap */
+	.l-promo-block-v2 {
+		.l-promo-block-v2-img-wrap {
+			height: 100%;
+		}
+		
+		.l-promo-block-v2-img-one {
+			@include position(inherit);
+		}
+	}
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+	.l-promo-block-v2 {
+		.l-promo-block-v2-title {
+			@include font($size: $font-size-36);
+		}
+	}
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+	.l-promo-block-v2 {
+		.l-promo-block-v2-btn {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Promo Block v3]
+------------------------------------------------------------------*/
+
+.l-promo-block-v3 {
+	position: relative;
+	text-align: center;
+
+	.l-promo-block-v3-overlay {
+		@include position(absolute, $top: 0, $left: 0);
+		@include size(100%);
+		@include bg-opacity(#4c4c61, .4);
+		padding: 150px 0 80px;
+	}
+
+	.l-promo-block-v3-title {
+		@include font($size: $font-size-50);
+		color: $color-white;
+		line-height: 1.2;
+	}
+
+	.l-promo-block-v3-text {
+		@include font($size: $font-size-24);
+		color: $color-white;
+		line-height: 1.3;
+		opacity: .8;
+	}
+
+	.l-promo-block-v3-ver-center {
+		display: inline-block;
+	}
+
+	.l-promo-block-v3-ver-center-col {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.l-promo-block-v3-video-title {
+		@include font($size: $font-size-24, $weight: $font-weight-300);
+		color: $color-white;
+		opacity: .8;
+	}
+
+	.l-promo-block-v3-video-icon {
+		@include size(55px);
+		@include font($size: $font-size-28);
+		color: $color-white;
+		background: $color-teal;
+		vertical-align: middle;
+		padding: 15px;
+		
+		&:hover {
+			background: $color-teal-light;
+		}
+	}
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+	.l-promo-block-v3 {
+		.l-promo-block-v3-overlay {
+			padding: 120px 0 80px;
+		}
+
+		.l-promo-block-v3-title {
+			@include font($size: $font-size-36);
+		}
+
+		.l-promo-block-v3-text {
+			@include font($size: $font-size-18);
+		}
+	}
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Promo Block v4]
+------------------------------------------------------------------*/
+
+.l-promo-block-v4 {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	overflow: hidden;
+	background: url(../../multiple-page/landing/assets/img/1920x1080/04.jpg) no-repeat;
+	background-size: cover;
+	background-position: center center;
+	padding-top: 150px;
+
+	&:before {
+		@include position(absolute, $top: 0, $left: 0);
+		@include size(100%);
+		z-index: -1;
+		@include bg-opacity(#4c4c61, .9);
+		content: " ";
+	}
+
+	.l-promo-block-v4-title {
+		@include font($size: $font-size-50);
+		color: $color-white;
+		line-height: 1.2;
+	}
+
+	.l-promo-block-v4-text {
+		@include font($size: $font-size-20);
+		color: $color-white;
+		line-height: 1.3;
+		opacity: .8;
+	}
+
+	.l-promo-block-v4-img-wrap {
+		position: relative;
+		height: 350px;
+	}
+	
+	.l-promo-block-v4-img-one {
+		@include position(absolute, $top: 0, $left: 0);
+	}
+
+	.l-promo-block-v4-img-two {
+		@include position(absolute, $top: 0, $left: 0);
+	}
+}
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+	/* Image Wrap */
+	.l-promo-block-v4 {
+		padding-top: 80px;
+		
+		.l-promo-block-v4-img-wrap {
+			height: 100%;
+		}
+		
+		.l-promo-block-v4-img-one {
+			@include position(inherit);
+		}
+	}
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+	.l-promo-block-v4 {
+		.l-promo-block-v4-title {
+			@include font($size: $font-size-28);
+		}
+	}
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Promo Block v5]
+------------------------------------------------------------------*/
+
+.l-promo-block-v5 {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	background: url(../../multiple-page/landing/assets/img/1920x1080/05.jpg) no-repeat;
+	background-size: cover;
+	background-position: 50% 20%;
+	padding: 150px 0;
+
+	&:before {
+		@include position(absolute, $top: 0, $left: 0);
+		@include size(100%);
+		z-index: -1;
+		@include bg-opacity(#4c4c61, .5);
+		content: " ";
+	}
+
+	.l-promo-block-v5-video {
+		text-decoration: none;
+	}
+
+	.l-promo-block-v5-video-effect {
+		position: relative;
+		display: inline-block;
+
+		&:before,
+		&:after {
+			@include border-radius(50%);
+			content: " ";
+			@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+		}
+		
+		&:before {
+			@include position(absolute, $top: -15px, $left: -15px, $right: -15px, $bottom: -15px);
+			border: 1px solid rgba(255,255,255,.5);
+		}
+
+		&:after {
+			@include position(absolute, $top: -35px, $left: -35px, $right: -35px, $bottom: -35px);
+			border: 1px solid rgba(255,255,255,.2);
+		}
+	}
+
+	.l-promo-block-v5-video-icon {
+		position: relative;
+		display: inline-block;
+		@include size(69px);
+		z-index: 2;
+		@include font($size: $font-size-70);
+		color: $color-white;
+		text-align: center;
+		box-shadow: 0 0 5px 2px rgba(255,255,255,.5);
+		vertical-align: middle;
+		@include border-radius(50%);
+		@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+	}
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Promo Block v6]
+------------------------------------------------------------------*/
+
+.l-promo-block-v6 {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	background: url(../../multiple-page/landing/assets/img/1920x1080/01.jpg) no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	padding: 150px 0 100px;
+
+	&:before {
+		@include position(absolute, $top: 0, $left: 0);
+		@include size(100%);
+		z-index: -1;
+		@include bg-opacity(#4c4c61, .5);
+		content: " ";
+	}
+
+	.l-promo-block-v6-title {
+		@include font($size: $font-size-50);
+		color: $color-white;
+		line-height: 1.2;
+	}
+
+	.l-promo-block-v6-text {
+		@include font($size: $font-size-20);
+		color: $color-white;
+		line-height: 1.3;
+	}
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+	.l-promo-block-v6 {
+		.l-promo-block-v6-title {
+			@include font($size: $font-size-28);
+		}
+	}
+}
+

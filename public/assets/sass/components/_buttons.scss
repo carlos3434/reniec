@@ -1,0 +1,1136 @@
+/*--------------------------------------------------
+    [Buttons On Hover]
+----------------------------------------------------*/
+
+/* Button Base Color */
+.btn-base {
+    @include buttons($color-base, $color-white, transparent, $color-base, 1px, transparent, $color-base);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-base, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-base, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-base, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-base, 4%), 15px 15px);
+    }
+}
+
+/* Button Base White Color */
+.btn-white {
+    @include buttons($color-white, $color-dark, transparent, $color-white, 1px, transparent, $color-white);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-white, 6%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-white, 6%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-white, 6%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-white, 6%), 15px 15px);
+    }
+}
+
+/* Button Dark Color */
+.btn-dark {
+    @include buttons($color-dark, $color-white, transparent, $color-dark, 1px, transparent, $color-dark);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-dark, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-dark, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-dark, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-dark, 4%), 15px 15px);
+    }
+}
+
+/* Button Grey Color */
+.btn-grey {
+    @include buttons($color-grey, $color-white, transparent, $color-grey, 1px, transparent, $color-grey);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-grey, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-grey, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-grey, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-grey, 4%), 15px 15px);
+    }
+}
+
+/* Button Blue Grey Color */
+.btn-blue-grey {
+    @include buttons($color-blue-grey, $color-white, transparent, $color-blue-grey, 1px, transparent, $color-blue-grey);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-blue-grey, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-blue-grey, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-blue-grey, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-blue-grey, 4%), 15px 15px);
+    }
+}
+
+/* Button Blue Color */
+.btn-blue {
+    @include buttons($color-blue, $color-white, transparent, $color-blue, 1px, transparent, $color-blue);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-blue, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-blue, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-blue, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-blue, 4%), 15px 15px);
+    }
+}
+
+/* Button Teal Color */
+.btn-teal {
+    @include buttons($color-teal, $color-white, transparent, $color-teal, 1px, transparent, $color-teal);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-teal, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-teal, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-teal, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-teal, 4%), 15px 15px);
+    }
+}
+
+/* Button Green Color */
+.btn-green {
+    @include buttons($color-green, $color-white, transparent, $color-green, 1px, transparent, $color-green);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-green, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-green, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-green, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-green, 4%), 15px 15px);
+    }
+}
+
+/* Button Red Color */
+.btn-red {
+    @include buttons($color-red, $color-white, transparent, $color-red, 1px, transparent, $color-red);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-red, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-red, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-red, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-red, 4%), 15px 15px);
+    }
+}
+
+/* Button Pink Color */
+.btn-pink {
+    @include buttons($color-pink, $color-white, transparent, $color-pink, 1px, transparent, $color-pink);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-pink, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-pink, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-pink, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-pink, 4%), 15px 15px);
+    }
+}
+
+/* Button Purple Color */
+.btn-purple {
+    @include buttons($color-purple, $color-white, transparent, $color-purple, 1px, transparent, $color-purple);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-purple, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-purple, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-purple, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-purple, 4%), 15px 15px);
+    }
+}
+
+/* Button Gold Color */
+.btn-gold {
+    @include buttons($color-gold, $color-white, transparent, $color-gold, 1px, transparent, $color-gold);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-gold, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-gold, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-gold, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-gold, 4%), 15px 15px);
+    }
+}
+
+
+/*--------------------------------------------------
+    [Buttons Border]
+----------------------------------------------------*/
+
+/* Button Base Color */
+.btn-base-brd {
+    @include buttons($color-base, $color-white, transparent, $color-base, 1px, $color-base, $color-base);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-base, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-base, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-base, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-base, 4%), 15px 15px);
+    }
+}
+
+/* Button Base White Color */
+.btn-white-brd {
+    @include buttons($color-white, $color-dark, transparent, $color-white, 1px, $color-white, $color-white);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-white, 6%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-white, 6%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-white, 6%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-white, 6%), 15px 15px);
+    }
+}
+
+/* Button Dark Color */
+.btn-dark-brd {
+    @include buttons($color-dark, $color-white, transparent, $color-dark, 1px, $color-dark, $color-dark);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-dark, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-dark, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-dark, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-dark, 4%), 15px 15px);
+    }
+}
+
+/* Button Grey Color */
+.btn-grey-brd {
+    @include buttons($color-grey, $color-white, transparent, $color-grey, 1px, $color-grey, $color-grey);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-grey, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-grey, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-grey, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-grey, 4%), 15px 15px);
+    }
+}
+
+/* Button Blue Grey Color */
+.btn-blue-grey-brd {
+    @include buttons($color-blue-grey, $color-white, transparent, $color-blue-grey, 1px, $color-blue-grey, $color-blue-grey);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-blue-grey, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-blue-grey, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-blue-grey, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-blue-grey, 4%), 15px 15px);
+    }
+}
+
+/* Button Blue Color */
+.btn-blue-brd {
+    @include buttons($color-blue, $color-white, transparent, $color-blue, 1px, $color-blue, $color-blue);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-blue, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-blue, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-blue, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-blue, 4%), 15px 15px);
+    }
+}
+
+/* Button Teal Color */
+.btn-teal-brd {
+    @include buttons($color-teal, $color-white, transparent, $color-teal, 1px, $color-teal, $color-teal);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-teal, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-teal, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-teal, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-teal, 4%), 15px 15px);
+    }
+}
+
+/* Button Green Color */
+.btn-green-brd {
+    @include buttons($color-green, $color-white, transparent, $color-green, 1px, $color-green, $color-green);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-green, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-green, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-green, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-green, 4%), 15px 15px);
+    }
+}
+
+/* Button Red Color */
+.btn-red-brd {
+    @include buttons($color-red, $color-white, transparent, $color-red, 1px, $color-red, $color-red);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-red, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-red, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-red, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-red, 4%), 15px 15px);
+    }
+}
+
+/* Button Pink Color */
+.btn-pink-brd {
+    @include buttons($color-pink, $color-white, transparent, $color-pink, 1px, $color-pink, $color-pink);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-pink, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-pink, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-pink, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-pink, 4%), 15px 15px);
+    }
+}
+
+/* Button Purple Color */
+.btn-purple-brd {
+    @include buttons($color-purple, $color-white, transparent, $color-purple, 1px, $color-purple, $color-purple);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-purple, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-purple, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-purple, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-purple, 4%), 15px 15px);
+    }
+}
+
+/* Button Gold Color */
+.btn-gold-brd {
+    @include buttons($color-gold, $color-white, transparent, $color-gold, 1px, $color-gold, $color-gold);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-gold, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-gold, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-gold, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-gold, 4%), 15px 15px);
+    }
+}
+
+/* Facebook */
+.btn-fb-brd {
+    @include buttons($color-fb, $color-white, transparent, $color-fb, 1px, $color-fb, $color-fb);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-fb, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-fb, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-fb, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-fb, 4%), 15px 15px);
+    }
+}
+
+/* Twitter */
+.btn-tw-brd {
+    @include buttons($color-tw, $color-white, transparent, $color-tw, 1px, $color-tw, $color-tw);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-tw, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-tw, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-tw, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-tw, 4%), 15px 15px);
+    }
+}
+
+/* Dribbble */
+.btn-dr-brd {
+    @include buttons($color-dr, $color-white, transparent, $color-dr, 1px, $color-dr, $color-dr);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-dr, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-dr, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-dr, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-dr, 4%), 15px 15px);
+    }
+}
+
+/* Instagram */
+.btn-ig-brd {
+    @include buttons($color-ig, $color-white, transparent, $color-ig, 1px, $color-ig, $color-ig);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-ig, 4%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-ig, 4%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-ig, 4%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-ig, 4%), 15px 15px);
+    }
+}
+
+
+/*--------------------------------------------------
+    [Buttons Background Color]
+----------------------------------------------------*/
+
+/* Button Background Base Color */
+.btn-base-bg {
+    @include buttons($color-white, $color-white, $color-base, $color-base-light, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-base, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-base, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-base, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-base, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background White Color */
+.btn-white-bg {
+    @include buttons($color-dark, $color-white, $color-white, $color-base, 1px, $color-white, $color-base);
+
+    .btn-base-element-xs {
+        @include buttons-element(transparent, darken($color-white, 6%), 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(transparent, darken($color-white, 6%), 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(transparent, darken($color-white, 6%), 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(transparent, darken($color-white, 6%), 15px 15px);
+    }
+}
+
+/* Button Background Dark Color */
+.btn-dark-bg {
+    @include buttons($color-white, $color-white, $color-dark, $color-dark-light, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-dark, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-dark, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-dark, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-dark, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Blue Grey Color */
+.btn-blue-grey-bg {
+    @include buttons($color-white, $color-white, $color-blue-grey, $color-blue-grey-light, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-blue-grey, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-blue-grey, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-blue-grey, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-blue-grey, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Grey Color */
+.btn-grey-bg {
+    @include buttons($color-white, $color-white, $color-grey, lighten($color-grey, 7%), 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-grey, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-grey, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-grey, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-grey, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Blue Color */
+.btn-blue-bg {
+    @include buttons($color-white, $color-white, $color-blue, $color-blue-light, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-blue, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-blue, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-blue, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-blue, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Teal Color */
+.btn-teal-bg {
+    @include buttons($color-white, $color-white, $color-teal, $color-teal-light, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-teal, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-teal, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-teal, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-teal, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Green Color */
+.btn-green-bg {
+    @include buttons($color-white, $color-white, $color-green, $color-green-light, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-green, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-green, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-green, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-green, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Red Color */
+.btn-red-bg {
+    @include buttons($color-white, $color-white, $color-red, $color-red-light, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-red, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-red, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-red, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-red, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Pink Color */
+.btn-pink-bg {
+    @include buttons($color-white, $color-white, $color-pink, $color-pink-light, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-pink, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-pink, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-pink, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-pink, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Purple Color */
+.btn-purple-bg {
+    @include buttons($color-white, $color-white, $color-purple, $color-purple-light, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-purple, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-purple, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-purple, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-purple, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Gold Color */
+.btn-gold-bg {
+    @include buttons($color-white, $color-white, $color-gold, $color-gold-light, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-gold, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-gold, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-gold, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-gold, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Facebook */
+.btn-fb-bg {
+    @include buttons($color-white, $color-white, $color-fb, $color-fb, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-fb, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-fb, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-fb, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-fb, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Twitter */
+.btn-tw-bg {
+    @include buttons($color-white, $color-white, $color-tw, $color-tw, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-tw, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-tw, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-tw, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-tw, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Dribbble */
+.btn-dr-bg {
+    @include buttons($color-white, $color-white, $color-dr, $color-dr, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-dr, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-dr, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-dr, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-dr, 4%), transparent, 15px 15px);
+    }
+}
+
+/* Button Background Instagram */
+.btn-ig-bg {
+    @include buttons($color-white, $color-white, $color-ig, $color-ig, 1px, transparent, transparent);
+
+    .btn-base-element-xs {
+        @include buttons-element(darken($color-ig, 4%), transparent, 6px 9px);
+    }
+
+    .btn-base-element-sm {
+        @include buttons-element(darken($color-ig, 4%), transparent, 9px 11px);
+    }
+
+    .btn-base-element-md {
+        @include buttons-element(darken($color-ig, 4%), transparent, 12px 13px);
+    }
+
+    .btn-base-element-lg {
+        @include buttons-element(darken($color-ig, 4%), transparent, 15px 15px);
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Buttons Sizes]
+------------------------------------------------------------------*/
+
+/* Mini Size */
+.btn-base-xs {
+    @include buttons-size($font-size-12, $font-weight-300, 8px 15px);
+
+    &.btn-base-animate-to-top,
+    &.btn-base-animate-to-right {
+        padding-right: 40px;
+    }
+}
+
+/* Small Size */
+.btn-base-sm {
+    @include buttons-size($font-size-14, $font-weight-300, 9px 22px);
+
+    &.btn-base-animate-to-top,
+    &.btn-base-animate-to-right {
+        padding-right: 50px;
+    }
+}
+
+/* Medium Size */
+.btn-base-md {
+    @include buttons-size($font-size-16, $font-weight-300, 12px 25px);
+
+    &.btn-base-animate-to-top,
+    &.btn-base-animate-to-right {
+        padding-right: 65px;
+    }
+}
+
+/* Large Size */
+.btn-base-lg {
+    @include buttons-size($font-size-20, $font-weight-300, 15px 30px);
+
+    &.btn-base-animate-to-top,
+    &.btn-base-animate-to-right {
+        padding-right: 75px;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Buttons Toggle]
+----------------------------------------------------*/
+
+/* Button White Toggle */
+.btn-group {
+    &.btn-white-toggle {
+        &.open {
+            .btn-white-bg {
+                box-shadow: none;
+
+                &:after {
+                    color: $color-base;
+                    content: "\f0d8";
+                }
+            }    
+        }
+
+        .btn-white-bg {
+            width: 300px;
+            @include font($size: $font-size-15, $weight: $font-weight-300);
+            color: $color-dark;
+            background: $color-white;
+            padding: 12px 100px 12px 15px;
+
+            &:after {
+                @include position(absolute, $top: 12px, $right: 15px);
+                @include font($size: $font-size-15, $family: $font-family-font-awesome);
+                color: $color-dark;
+                content: "\f0d7";
+            }
+
+            &:hover,
+            &:focus,
+            &.focus {
+                color: $color-dark;
+                background: $color-white;
+                border-color: $color-white;
+                box-shadow: inset none;
+            }
+        }
+
+        .dropdown-menu {
+            width: 300px;
+            border: none;
+            @include border-radius(3px);
+            box-shadow: none;
+            padding: 0;
+            margin: 1px 0 0;
+
+            > li {
+                > a {
+                    @include font($size: $font-size-15, $weight: $font-weight-300);
+                    color: $color-dark;
+                    border-bottom: 1px solid $color-sky-light;
+                    padding: 10px 15px;
+
+                    .dropdown-menu-icon {
+                        min-width: 25px;
+                        text-align: center;
+                        vertical-align: middle;
+                        margin-right: 5px;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        background: $color-base;
+                        color: $color-white;
+                    }
+                }
+
+                &:first-child {
+                    > a {
+                        border-top-right-radius: 3px;
+                        border-top-left-radius: 3px;
+                    }
+                }
+
+                &:last-child {
+                    > a {
+                        border-bottom: none;
+                        border-bottom-right-radius: 3px;
+                        border-bottom-left-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Buttons Icon Animate To Top]
+------------------------------------------------------------------*/
+
+.btn-base-animate-to-top {
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+
+    &:hover {
+        .btn-base-element-icon {
+            @include animation(toTopFromBottom .3s forwards);
+        }
+    }
+}
+
+@include keyframes(toTopFromBottom) {
+    49% {
+        @include translate3d(0,-100%,0);
+    }
+    50% {
+        opacity: 0;
+        @include translate3d(0,100%,0);
+    }
+    51% {
+        opacity: 1;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Buttons Icon Animate To Right]
+------------------------------------------------------------------*/
+
+.btn-base-animate-to-right {
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+
+    &:hover {
+        .btn-base-element-icon {
+            @include animation(toRightFromLeft .3s forwards);
+        }
+    }
+}
+
+@include keyframes(toRightFromLeft) {
+    49% {
+        @include translate3d(0,100%,0);
+    }
+    50% {
+        opacity: 0;
+        @include translate3d(0,-100%,0);
+    }
+    51% {
+        opacity: 1;
+    }
+}
+

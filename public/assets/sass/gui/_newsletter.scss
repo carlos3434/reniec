@@ -1,0 +1,132 @@
+/*--------------------------------------------------
+    [Newsletter v1]
+----------------------------------------------------*/
+
+.newsletter-v1 {
+    background: url(../../assets/img/1920x1080/19.jpg);
+    background-size: cover;
+    background-position: 50% 10%;
+
+    .newsletter-v1-form {
+        color: $color-dark;
+        @include placeholder($color-dark);
+        @include size(100%, 48px);
+        border-color: $color-dark;
+
+        &:focus {
+            color: $color-dark;
+            @include placeholder($color-dark);
+            border-color: $color-dark;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Newsletter v2]
+----------------------------------------------------*/
+
+.newsletter-v2 {
+    .newsletter-v2-title {
+        position: relative;
+        @include font($size: $font-size-30);
+        color: $color-white;
+        padding-left: 60px;
+
+        &:before {
+            @include position(absolute, $top: -30px, $left: 0);
+            display: inline-block;
+            @include font($size: $font-size-100, $family: $font-family-droid);
+            color: $color-white;
+            opacity: .7;
+            content: "“";
+        }
+    }
+
+    .newsletter-v2-author {
+        @include font($size: $font-size-16, $style: italic);
+        color: $color-white;
+        opacity: .8;
+        padding-left: 60px;
+        margin-bottom: 0;
+    }
+
+    .newsletter-v2-form {
+        @include size(100%, 48px);
+        color: $color-grey-light;
+        @include placeholder ($color-grey-light);
+        background: darken($color-dark, 3%);
+        border: none;
+        margin-bottom: 20px;
+
+        &:focus {
+            color: $color-white;
+            @include placeholder ($color-white);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Newsletter v3]
+----------------------------------------------------*/
+
+.newsletter-v3 {
+    .newsletter-v3-title {
+        @include font($size: $font-size-16);
+        color: $color-white;
+        margin: 0;
+    }
+
+    .newsletter-v3-subtitle {
+        color: $color-white;
+    }
+
+    .newsletter-v3-form {
+        height: 48px;
+        background: $color-white;
+        border: none;
+
+        &:focus {
+            background: darken($color-white, .7%);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Newsletter v4]
+----------------------------------------------------*/
+
+.newsletter-v4 {
+    .newsletter-heading {
+        text-align: right;
+        padding-right: 30px;
+
+        .newsletter-v4-title {
+            @include font($size: $font-size-22);
+            margin: 0;
+        }
+
+        .newsletter-v4-text {
+            margin-bottom: 0;
+        }
+    }
+
+    .newsletter-v4-form {
+        @include size(100%, 50px);
+        color: $color-subtitle;
+        @include placeholder ($color-subtitle);
+        @include border-radius(3px !important);
+        padding-left: 20px;
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .newsletter-v4 {
+        .newsletter-heading {
+            text-align: center;
+        }
+    }
+}

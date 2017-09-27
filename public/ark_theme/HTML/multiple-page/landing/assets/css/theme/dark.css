@@ -1,0 +1,133 @@
+/*--------------------------------------------------
+    [Dark Theme]
+----------------------------------------------------*/
+
+/*------------------------------------------------------------------
+    [Icon Box v1]
+------------------------------------------------------------------*/
+.dark-theme .l-icon-box-v1 .l-icon-box-v1-icon {
+  color: #fff;
+}
+
+/*------------------------------------------------------------------
+    [Icon Box v2]
+------------------------------------------------------------------*/
+.dark-theme .l-icon-box-v2 .l-icon-box-v2-icon {
+  color: #fff;
+}
+
+/*------------------------------------------------------------------
+    [Landing Services v1]
+------------------------------------------------------------------*/
+.dark-theme .l-services-v1 {
+  background: #34343c;
+  box-shadow: 7px 7px 5px 0 #3c3c47;
+}
+
+/*------------------------------------------------------------------
+    [Landing Services v2]
+------------------------------------------------------------------*/
+.dark-theme .l-services-v2 {
+  background: #34343c;
+  box-shadow: 7px 7px 5px 0 #3c3c47;
+}
+
+.dark-theme .l-services-v2 .l-services-v2-icon-wrap {
+  background: #3a3a44;
+}
+
+/*------------------------------------------------------------------
+    [Landing Services v4]
+------------------------------------------------------------------*/
+.dark-theme .l-services-v4 {
+  box-shadow: 7px 7px 7px 1px #3f3f4a;
+}
+
+.dark-theme .l-services-v4 .l-services-v4-media {
+  background: #34343c;
+}
+
+/*------------------------------------------------------------------
+    [Landing News v1]
+------------------------------------------------------------------*/
+.dark-theme .l-news-v1 {
+  background: #34343c;
+  box-shadow: 7px 7px 5px 0 #3c3c47;
+}
+
+.dark-theme .l-news-v1 .l-news-v1-day {
+  color: #f7f8fa;
+}
+
+/*------------------------------------------------------------------
+    [Landing Testimonials v1]
+------------------------------------------------------------------*/
+.dark-theme .l-testimonials-v1 {
+  background: #34343c;
+  box-shadow: 7px 7px 5px 0 #3c3c47;
+}
+
+.dark-theme .l-testimonials-v1 .l-testimonials-v1-user-picture {
+  border: 3px solid #3a3a44;
+}
+
+.dark-theme .l-testimonials-v1 .l-testimonials-v1-author {
+  color: #fff;
+}
+
+/*------------------------------------------------------------------
+    [Landing Testimonials v2]
+------------------------------------------------------------------*/
+.dark-theme .l-testimonials-v2 .l-testimonials-v2-media {
+  background: #34343c;
+}
+
+.dark-theme .l-testimonials-v2 .l-testimonials-v2-subtext {
+  color: #fff;
+}
+
+/*--------------------------------------------------
+    [Landing Pricing List v1]
+----------------------------------------------------*/
+.dark-theme .l-pricing-list-v1 {
+  background: #34343c;
+  box-shadow: 7px 7px 5px 0 #3c3c47;
+}
+
+.dark-theme .l-pricing-list-v1 .l-pricing-list-v1-price-sign,
+.dark-theme .l-pricing-list-v1 .l-pricing-list-v1-price,
+.dark-theme .l-pricing-list-v1 .l-pricing-list-v1-subprice,
+.dark-theme .l-pricing-list-v1 .l-pricing-list-v1-price-info {
+  color: #fff;
+}
+
+/*------------------------------------------------------------------
+    [Landing Promo Section v1]
+------------------------------------------------------------------*/
+.dark-theme .l-promo-section-v1-content .l-promo-section-v1-subtitle {
+  color: #f7f8fa;
+}
+
+.dark-theme .l-promo-section-v1 .l-promo-section-v1-quote-author {
+  color: #f7f8fa;
+}
+
+/*------------------------------------------------------------------
+    [Landing Comment Form]
+------------------------------------------------------------------*/
+.dark-theme .l-comment-form .l-comment-input {
+  background: #3a3a44;
+}
+
+.dark-theme .l-comment-form .l-comment-input:focus {
+  background: #34343c;
+  box-shadow: 2px 2px 5px 2px #3c3c47;
+}
+
+/*--------------------------------------------------
+    [Landing Login]
+----------------------------------------------------*/
+.dark-theme .l-login .l-login-content {
+  background: #34343c;
+  box-shadow: 0 0 15px 10px #3f3f4a;
+}

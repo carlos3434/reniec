@@ -1,0 +1,107 @@
+/*------------------------------------------------------------------
+    [Landing Testimonials v1]
+------------------------------------------------------------------*/
+
+.l-testimonials-v1 {
+	text-align: center;
+	background: $color-white;
+	padding: 30px;
+	box-shadow: 7px 7px 5px 0 lighten($color-tint-light, 1%);
+
+	.l-testimonials-v1-user-picture {
+        @include size(60px);
+        border: 3px solid $color-tint-light;
+        margin-bottom: 15px;
+    }
+
+    .l-testimonials-v1-icon {
+        @include size(60px);
+    	@include font($size: $font-size-36);
+    	margin-bottom: 15px;
+    	padding: 12px;
+    }
+
+    .l-testimonials-v1-quote {
+        @include font($size: $font-size-14);
+    }
+
+    .l-testimonials-v1-quote-mark {
+    	position: relative;
+    	display: block;
+    	padding-top: 75px;
+
+    	&:before {
+            @include position(absolute, $top: -12px, $left: 50%);
+            display: inline-block;
+            @include font($size: $font-size-100, $family: $font-family-droid);
+            color: $color-dark;
+            content: "“";
+            @include translate3d(-50%,0,0);
+        }
+    }
+
+    .l-testimonials-v1-author {
+    	position: relative;
+    	@include font($size: $font-size-18);
+        color: $color-dark;
+        margin-bottom: 3px;
+        text-decoration: none;
+        @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+        &:before {
+            @include position(absolute, $bottom: 0, $left: 0);
+            @include size(0, 1px);
+            background: $color-teal;
+            content: " ";
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+        }
+
+        &:hover {
+           color: $color-teal;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+            &:before {
+                @include position(absolute, $bottom: 0, $left: 0);
+                @include size(100%, 1px);
+                @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Landing Testimonials v2]
+------------------------------------------------------------------*/
+
+.l-testimonials-v2 {
+    .l-testimonials-v2-media {
+        background: $color-white;
+        padding: 30px;
+    }
+
+    .l-testimonials-v2-title {
+        @include font($size: $font-size-28);
+        margin-bottom: 10px;
+    }
+
+    .l-testimonials-v2-subtext {
+        @include font($size: $font-size-16, $weight: $font-weight-400);
+        color: $color-dark;
+    }
+}
+
+/* Media Queries below 768px */
+@media (min-width: $screen-md-min) {
+    .l-testimonials-v2 {
+        .l-testimonials-v2-media-t-l {
+            @include position(absolute, $top: 20px, $left: 43%);
+        }
+
+        .l-testimonials-v2-media-t-r {
+            @include position(absolute, $top: 20px, $right: 43%);
+        }
+    }
+}
+
+

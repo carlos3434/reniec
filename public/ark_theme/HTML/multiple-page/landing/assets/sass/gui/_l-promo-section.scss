@@ -1,0 +1,127 @@
+/*------------------------------------------------------------------
+    [Landing Promo Section v1]
+------------------------------------------------------------------*/
+
+.l-promo-section-v1-content {
+	padding-top: 70px;
+
+	.l-promo-section-v1-icon {
+		display: block;
+		@include font($size: $font-size-70);
+		color: $color-teal;
+		margin-bottom: 50px;
+	}
+
+	.l-promo-section-v1-title {
+		@include font($size: $font-size-36);
+		line-height: 1.2;
+		margin-bottom: 25px;
+	}
+
+	.l-promo-section-v1-subtitle {
+		display: block;
+		@include font($size: $font-size-18);
+		color: $color-dark-light;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+	}
+}
+
+/* Quote */
+.l-promo-section-v1 {
+	.l-promo-section-v1-quote {
+		display: table;
+	}
+
+	.l-promo-section-v1-quote-media {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.l-promo-section-v1-quote-img {
+		@include size(150px);
+	}
+
+	.l-promo-section-v1-quote-text {
+		@include font($style: italic);
+		margin-bottom: 20px;
+	}
+
+	.l-promo-section-v1-quote-author {
+		@include font($size: $font-size-15, $weight: $font-weight-400);
+		color: $color-dark-light;
+		text-transform: uppercase;
+		margin-bottom: 0;
+	}
+}
+
+/* Media Queries below 992px */
+@media (min-width: $screen-md-min) {
+	.l-promo-section-v1 {
+		position: relative;
+		min-height: 900px;
+
+		.l-promo-section-v1-img-left {
+			@include position(absolute, $top: 60px, $right: 45%);
+		}
+
+		.l-promo-section-v1-img-right {
+			@include position(absolute, $top: 60px, $left: 45%);
+		}
+	}
+}
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+	.l-promo-section-v1 {
+		position: relative;
+	}
+
+	.l-promo-section-v1-content {
+		padding-top: 0;
+	}
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+	.l-promo-section-v1-content {
+		&.l-promo-section-v1-content-p-l {
+			padding-left: 0;
+		}
+
+		.l-promo-section-v1-title {
+			@include font($size: $font-size-28);
+		}
+	}
+	
+	.l-promo-section-v1 {
+		.l-promo-section-v1-img-left,
+		.l-promo-section-v1-img-right {
+			> img {
+				display: block;
+			  	max-width: 100%;
+			  	height: auto;
+			}
+		}
+	}
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+	/* Quote */
+	.l-promo-section-v1 {
+		.l-promo-section-v1-quote {
+			display: block;
+			text-align: center;
+		}
+
+		.l-promo-section-v1-quote-media {
+			display: block;
+			vertical-align: inherit;
+		}
+
+		.l-promo-section-v1-quote-img {
+			margin-bottom: 20px;
+		}
+	}
+}

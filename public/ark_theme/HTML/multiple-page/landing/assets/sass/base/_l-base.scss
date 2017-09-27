@@ -1,0 +1,62 @@
+/*------------------------------------------------------------------
+  	[The "base.scss" contains basic default element styles
+  		(colors, typography, margins & padding).]
+------------------------------------------------------------------*/
+
+html {
+    overflow-x: hidden;
+}
+
+html, html a, body {
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: $font-family-hind;
+}
+
+p {
+    @include font($size: $font-size-15, $weight: $font-weight-300, $family: $font-family-hind);
+    color: $color-subtitle;
+    line-height: 1.7;
+}
+
+em,
+li,
+li a {
+    @include font($size: $font-size-15, $weight: $font-weight-300, $family: $font-family-hind);
+    color: $color-dark;
+}
+
+a {
+    @include font($family: $font-family-hind);
+    color: $color-base;
+    outline: 0;
+
+    &:focus,
+    &:hover,
+    &:active {
+        outline: 0;
+        color: $color-base;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include font($weight: $font-weight-300, $family: $font-family-hind);
+    color: $color-dark;
+    line-height: $line-height-base;
+    margin: 0 0 15px;
+
+    > a {
+        color: $color-dark;
+
+        &:hover {
+            color: $color-base;
+            text-decoration: none;
+        }
+
+        &:focus {
+            text-decoration: none;
+        }
+    }
+}

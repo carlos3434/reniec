@@ -1,0 +1,45 @@
+/*------------------------------------------------------------------
+    [Landing News v1]
+------------------------------------------------------------------*/
+
+.l-news-v1 {
+	padding: 10px;
+	background: $color-white;
+	box-shadow: 7px 7px 5px 0 lighten($color-tint-light, 1%);
+
+	.l-news-v1-media {
+		padding: 20px 10px 10px;
+	}
+
+	.l-news-v1-title {
+		position: relative;
+		display: inline-block;
+		@include font($size: $font-size-18);
+		margin-bottom: 3px;
+
+		&:before {
+            @include position(absolute, $bottom: 0, $left: 0);
+            @include size(0, 1px);
+            background: $color-teal;
+            content: " ";
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+        }
+
+        &:hover {
+           color: $color-teal;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+            &:before {
+                @include position(absolute, $bottom: 0, $left: 0);
+                @include size(100%, 1px);
+                @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+            }
+        }
+	}
+
+	.l-news-v1-day {
+		display: block;
+		@include font($size: $font-size-13);
+		color: lighten($color-subtitle, 7%);
+	}
+}

@@ -1,0 +1,69 @@
+/*------------------------------------------------------------------
+    [Landing Promo Signup v1]
+------------------------------------------------------------------*/
+
+.l-promo-signup-v1 {
+	position: relative;
+	z-index: 1;
+	background: url(../../multiple-page/landing/assets/img/1920x1080/02.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity(#4c4c61, .9);
+        content: " ";
+    }
+}
+
+/* Form */
+.l-promo-signup-v1 {
+	.l-promo-signup-v1-form {
+		position: relative;
+		display: block;
+		overflow: hidden;
+	}
+
+	.l-promo-signup-v1-input {
+		position: relative;
+		display: block;
+		height: 48px;
+		float: right;
+		border: none;
+		padding-left: 20px;
+		@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+		&:focus {
+			padding-left: 40px;
+			@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+			+ .l-promo-signup-v1-label {
+				.l-promo-signup-v1-icon {
+					@include translate3d(0,0,0);
+				}
+			}
+		}
+	}
+
+	.l-promo-signup-v1-label {
+		position: absolute;
+		width: 100%;
+		display: inline-block;
+		float: right;
+		@include font($size: $font-size-14, $weight: $font-weight-300);
+		text-align: left;
+		pointer-events: none;
+		padding: 15px 13px 11px;
+		margin-bottom: 0;
+	}
+
+	.l-promo-signup-v1-icon {
+		display: inline-block;
+		@include font($size: $font-size-16);
+		color: $color-subtitle;
+		@include translate3d(-40px,0,0);
+		@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+	}
+}

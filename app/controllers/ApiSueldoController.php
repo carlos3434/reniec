@@ -21,35 +21,13 @@ class ApiSueldoController extends Controller
     public function careers()
     {
 
-        $careers = array(
-            [
-                "id" => 1,
-                "name" => "Ingeniería Informática"
-            ],
-            [
-                "id" => 2,
-                "name" => "Derecho"
-            ],
-            [
-                "id" => 3,
-                "name" => "Arquitectura"
-            ],
-            [
-                "id" => 4,
-                "name" => "Ingeniería Industrial"
-            ],
-            [
-                "id" => 5,
-                "name" => "Psicología"
-            ]
-        );
+        //$careersNamesJson = Career::all()->pluck('name')->toJson();
+        $careers = DB::table('careers')->select('name')->get();
+        $careers = array_flatten($careers);
+        return $careers;
 
-        $response = array(
-            "careers" => $careers,
-        );
-
-        return Response::json($response);
     }
+
     public function regiones()
     {
 
@@ -83,8 +61,21 @@ class ApiSueldoController extends Controller
         return Response::json($response);
     }
 
-    public function index($id = 1, $years = 1)
+    public function index()
     {
+
+        $input = Input::all();
+        $idCareer = $input['idCareer'];
+        $referenceYear = $input['referenceYear'];
+        $experienceYears = $input['experienceYears'];
+
+        $response = array(
+            "idCareer" => $idCareer,
+            "referenceYear" => $referenceYear,
+            "experienceYears" => $experienceYears
+        );
+
+        var_dump($response);
 
         //$sueldos = DB::table('sueldos')->get();
         //$sueldos = DB::table('sueldos')->lists('sueldo');
@@ -105,10 +96,14 @@ class ApiSueldoController extends Controller
 
         //dd($percentiles);
         
+        /*
         $avg = DB::table('sueldos')->avg('sueldo');
 
         $labels = ["1200","1500","1800","2100","2400","2700"];
         $sueldos = [1400, 1700, 2000, 1600, 500, 200];
+
+        $years = 1;
+        $id = 1;
 
         if ($years == 1) {
             if ($id == 1) {
@@ -128,13 +123,13 @@ class ApiSueldoController extends Controller
             };
         };
 
-        $response = array(
+        $response2 = array(
             "labels" => $labels,
             "data" => $sueldos
         );
 
         return Response::json($response);
-
+*/
     }
 
 }

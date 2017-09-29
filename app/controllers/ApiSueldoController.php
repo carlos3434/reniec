@@ -21,16 +21,21 @@ class ApiSueldoController extends Controller
     public function careers()
     {
 
-        //$careersNamesJson = Career::all()->pluck('name')->toJson();
+        // $careersNamesJson = Career::all()->pluck('name')->toJson();
+        // var_dump($careersNamesJson);
         $careers = DB::table('careers')->select('name')->get();
         $careers = array_flatten($careers);
-        return $careers;
+        //return $careers;
 
-        $response = array(
-            "careers" => Career::all(),
-        );
+        $careers = Career::all();
 
-        return Response::json($response);
+        $careerNames = [];
+
+        foreach ($careers as $career) {
+            array_push($careerNames, $career->name);
+        };
+
+        return Response::json($careerNames);
 
     }
 

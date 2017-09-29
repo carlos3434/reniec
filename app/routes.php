@@ -25,7 +25,7 @@ Route::get('home', function () {
 Route::get('careers', 'ApiSueldoController@careers');
 Route::get('regiones', 'ApiSueldoController@regiones');
 
-Route::get('sueldos/{careerId?}/{years?}', 'ApiSueldoController@index');
+Route::post('sueldos', 'ApiSueldoController@index');
 
 Route::get('colores', function () {
     $colores=[12, 19, 3, 5, 2, 3];

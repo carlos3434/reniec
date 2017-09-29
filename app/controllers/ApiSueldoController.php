@@ -21,63 +21,16 @@ class ApiSueldoController extends Controller
     public function careers()
     {
 
-        $careers = array(
-            [
-                "id" => 1,
-                "name" => "Ingeniería Informática"
-            ],
-            [
-                "id" => 2,
-                "name" => "Derecho"
-            ],
-            [
-                "id" => 3,
-                "name" => "Arquitectura"
-            ],
-            [
-                "id" => 4,
-                "name" => "Ingeniería Industrial"
-            ],
-            [
-                "id" => 5,
-                "name" => "Psicología"
-            ]
-        );
-
         $response = array(
-            "careers" => $careers,
+            "careers" => Career::all(),
         );
 
         return Response::json($response);
     }
     public function regiones()
     {
-
-        $regiones = array(
-            [
-                "id" => 1,
-                "name" => "Lima"
-            ],
-            [
-                "id" => 2,
-                "name" => "Huancayo"
-            ],
-            [
-                "id" => 3,
-                "name" => "Arequipa"
-            ],
-            [
-                "id" => 4,
-                "name" => "Piura"
-            ],
-            [
-                "id" => 5,
-                "name" => "Trujillo"
-            ]
-        );
-
         $response = array(
-            "regiones" => $regiones,
+            "regiones" => Region::all(),
         );
 
         return Response::json($response);
@@ -86,24 +39,10 @@ class ApiSueldoController extends Controller
     public function index($id = 1, $years = 1)
     {
 
-        //$sueldos = DB::table('sueldos')->get();
-        //$sueldos = DB::table('sueldos')->lists('sueldo');
-
-        //dd($sueldos);
-
-        //dd($results);
-        //$data = $results->toArray();
-        //dd($data);
-
-        //$percentiles = array();
-        //$percentile_marks = array(25,50,75);
-
-        /*foreach ($percentile_marks as $value) {
-          $percentile = $this->get_percentile ( $sueldos, $value );  
-          array_push($percentiles, $percentile);
-        };*/
-
-        //dd($percentiles);
+        $career = Input::get('career');
+        $anio = Input::get('anio');
+        $genero = Input::get('genero');
+        $region = Input::get('region');
         
         $avg = DB::table('sueldos')->avg('sueldo');
 

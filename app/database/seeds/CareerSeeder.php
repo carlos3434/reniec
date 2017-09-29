@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 
 class CareerSeeder extends Seeder {
 

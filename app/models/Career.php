@@ -2,6 +2,6 @@
 
 class Career extends Eloquent
 {
-  protected $fillable = ['name'];
-  public $timestamps = false;
+    protected $fillable = ['name'];
+    public $timestamps = false;
 }

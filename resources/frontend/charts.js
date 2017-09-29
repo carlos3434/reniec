@@ -3,16 +3,23 @@ let vm = new Vue({
     data: {
         carreras:[],
         regiones:[],
-        carreraSelec:'',
-        regionSelec:'',
+        career:'',
+        region:'',
         genero:'',
-        anio:2017
+        anio:2017,
     },
 });
 
 var Empleabilidad={
-    get:function(careerId,anio,callback) {
-        $.get( "sueldos/"+careerId+"/"+anio,
+    get:function(callback) {
+        var request={
+            career:vm.career,
+            anio:vm.anio,
+            genero:vm.genero,
+            region:vm.region
+        };
+        $.post("sueldos",request,
+        //$.get( "sueldos/"+careerId+"/"+anio,
         function(response) {
             callback(response);
         })
@@ -121,11 +128,8 @@ pintar=function(sueldos){
     });
 };
 $( "#btn_sueldos" ).click(function() {
-    careerId=$('#slct_carrera').val();
-    anio=vm.anio;
-    genero=vm.genero;
-    Empleabilidad.get(careerId,anio,pintar);
-    
+    //careerId=$('#slct_carrera').val();
+    Empleabilidad.get(pintar);
 });
 
 

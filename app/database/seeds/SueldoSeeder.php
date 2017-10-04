@@ -4,7 +4,7 @@ class SueldoSeeder extends Seeder {
 
     public function run() {
 
-        Sueldo::truncate();
+        // Sueldo::truncate();
 
         $careerIds = [1,2,3,4,5];
         $referenceYears = [2017,2016];

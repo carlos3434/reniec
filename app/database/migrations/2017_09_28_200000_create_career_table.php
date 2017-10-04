@@ -18,12 +18,6 @@ class CreateCareerTable extends Migration {
             $table->string('description');
             $table->softDeletes();
         });
-        Schema::create("regions", function(Blueprint $table) {
-            $table->increments("id");
-            $table->string('name');
-            $table->string('description');
-            $table->softDeletes();
-        });
     }
 
     /**
@@ -34,7 +28,6 @@ class CreateCareerTable extends Migration {
     public function down()
     {
         Schema::dropIfExists("careers");
-        Schema::dropIfExists("regions");
     }
 
 }

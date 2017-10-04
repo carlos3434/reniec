@@ -47,12 +47,23 @@ class ApiSueldoController extends Controller
         $referenceYear = Input::get('referenceYear');
         $experienceYears = Input::get('experienceYears');
 
-        
+        $sueldos = Sueldo::
+              where('careerId', $idCareer)
+            ->where('referenceYear', $referenceYear)
+            ->where('experienceYears', $experienceYears)
+            ->get();
+
+        $labels = array();
+        $data = array();
+
+        foreach ($sueldos as $sueldo) {
+            array_push($labels, (string) $sueldo->salary);
+            array_push($data, $sueldo->quantity);
+        };
 
         $response = array(
-            "idCareer" => $idCareer,
-            "referenceYear" => $referenceYear,
-            "experienceYears" => $experienceYears
+            "labels" => $labels,
+            "data" => $data,
         );
 
         return Response::json($response);      

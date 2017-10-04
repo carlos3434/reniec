@@ -13,10 +13,11 @@ let vm = new Vue({
 var Empleabilidad={
     get:function(callback) {
         var request={
-            career:vm.career,
-            anio:vm.anio,
-            genero:vm.genero,
-            region:vm.region
+            idCareer: vm.career,
+            referenceYear: vm.anio,
+            experienceYears: 5,
+            gender: vm.genero,
+            regionId: vm.region
         };
         $.post("sueldos",request,
         //$.get( "sueldos/"+careerId+"/"+anio,

@@ -43,10 +43,11 @@ class ApiSueldoController extends Controller
     public function index()
     {
 
-        $input = Input::all();
-        $idCareer = $input['idCareer'];
-        $referenceYear = $input['referenceYear'];
-        $experienceYears = $input['experienceYears'];
+        $idCareer = Input::get('idCareer');
+        $referenceYear = Input::get('referenceYear');
+        $experienceYears = Input::get('experienceYears');
+
+        
 
         $response = array(
             "idCareer" => $idCareer,

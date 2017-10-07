@@ -13,6 +13,10 @@ class SueldoSeeder extends Seeder {
 
         $samples = [1,2,3,4,5];
 
+        function random_float ($min,$max) {
+            return ($min + lcg_value()*(abs($max - $min)));
+        };
+
         foreach ($careerIds as $careerId) {
 
             foreach ($referenceYears as $referenceYear) {
@@ -23,14 +27,17 @@ class SueldoSeeder extends Seeder {
 
                         foreach ($samples as $sample) {
 
+                            $randomFactor1 = random_float(0,1);
+                            $randomFactor2 = random_float(0,1);
+
                             Sueldo::create(
                                 array(
                                     'careerId' => $careerId,
                                     'referenceYear' => $referenceYear,
                                     'experienceYears' => $experienceYears,
                                     'gender' => $gender,
-                                    'salary' => $sample * 1000 + intval ( rand(0,1) * 1000 * 5 ),
-                                    'quantity' => 2000 + intval ( rand(0,1) * 1000 )
+                                    'salary' => $sample * 1000 + intval ( $randomFactor1 * 1000 * 5 ),
+                                    'quantity' => 2000 + intval ( $randomFactor2 * 1000 )
                                 )
                             );
 

@@ -43,22 +43,38 @@ class ApiSueldoController extends Controller
     public function index()
     {
 
-        $idCareer = Input::get('idCareer');
-        $referenceYear = Input::get('referenceYear');
-        $experienceYears = Input::get('experienceYears');
+        $careerId = Input::get('idCareer', 1);
+        $referenceYear = Input::get('referenceYear', 2017);
+        $experienceYears = Input::get('experienceYears', 5);
         $gender = Input::get('gender', 'F');
 
-        $sueldos = Sueldo::
-              where('careerId', $idCareer)
-            ->where('referenceYear', $referenceYear)
-            ->where('experienceYears', $experienceYears);
-
-        if ( !is_null($gender) ) {
-            $sueldos->where('gender', '=', $gender);
-        };
+        $sueldos = Sueldo::query();
         
+        if ( !is_null($careerId) and $careerId!='' ) {
+            $sueldos->where('careerId', '=', $careerId);
+        } else {
+            $sueldos->where('careerId', 1);
+        };
+
+        $sueldos->where('referenceYear', $referenceYear);
+        $sueldos->where('experienceYears', $experienceYears);
+
+        if ( !is_null($gender) and $gender!='' ) {
+            $sueldos->where('gender', '=', $gender);
+        } else {
+            $sueldos->where('gender', '=', 'F');
+        };
+
+        // DB::connection()->enableQueryLog();
+
         $sueldos = $sueldos->get();
 
+        /*
+        $queries = DB::getQueryLog();
+        var_dump($queries);
+        die();
+        */
+        
         $labels = array();
         $data = array();
 

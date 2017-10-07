@@ -7,6 +7,7 @@ class Sueldo extends Eloquent
       'careerId',
       'referenceYear',
       'experienceYears',
+      'gender',
       'salary',
       'quantity'
     ];

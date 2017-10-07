@@ -46,14 +46,18 @@ class ApiSueldoController extends Controller
         $idCareer = Input::get('idCareer');
         $referenceYear = Input::get('referenceYear');
         $experienceYears = Input::get('experienceYears');
-        $gender = Input::get('gender');
+        $gender = Input::get('gender', 'F');
 
         $sueldos = Sueldo::
               where('careerId', $idCareer)
             ->where('referenceYear', $referenceYear)
-            ->where('experienceYears', $experienceYears)
-            ->where('gender', '=', $gender)
-            ->get();
+            ->where('experienceYears', $experienceYears);
+
+        if ( !is_null($gender) ) {
+            $sueldos->where('gender', '=', $gender);
+        };
+        
+        $sueldos = $sueldos->get();
 
         $labels = array();
         $data = array();

@@ -49,9 +49,13 @@ class ApiSueldoController extends Controller
         $gender = Input::get('gender', 'F');
 
         $sueldos = Sueldo::query();
-        
-        if ( !is_null($careerId) and $careerId!='' ) {
-            $sueldos->where('careerId', '=', $careerId);
+
+        if ( !is_null($careerId) ) {
+            if ($careerId!='') {
+                $sueldos->where('careerId', $careerId);    
+            } else {
+                $sueldos->where('careerId', 1);
+            };
         } else {
             $sueldos->where('careerId', 1);
         };
@@ -65,15 +69,15 @@ class ApiSueldoController extends Controller
             $sueldos->where('gender', '=', 'F');
         };
 
-        // DB::connection()->enableQueryLog();
+        //DB::connection()->enableQueryLog();
 
         $sueldos = $sueldos->get();
 
         /*
         $queries = DB::getQueryLog();
         var_dump($queries);
-        die();
         */
+        //die();
         
         $labels = array();
         $data = array();

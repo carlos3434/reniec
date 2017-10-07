@@ -7,7 +7,7 @@ class SueldoSeeder extends Seeder {
         Sueldo::truncate();
 
         $careerIds = [1,2,3,4,5];
-        $referenceYears = [2017,2016];
+        $referenceYears = [2017,2016,2012];
         $experienceYearsSample = [1,5];
         $genders = ['F', 'M'];
 

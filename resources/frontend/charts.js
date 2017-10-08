@@ -72,7 +72,7 @@ var Regiones={
 };
 
 pintar=function(sueldos){
-    //console.log(sueldos);
+    $('#div_chart').html('<canvas id="myChart" width="400" height="400"></canvas>');
     var ctx = document.getElementById("myChart").getContext('2d');
     //sueldos.data
     //sueldos.labels

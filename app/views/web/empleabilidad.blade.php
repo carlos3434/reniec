@@ -109,8 +109,11 @@
 
 
         <div class="row">
-          <div class="col-xs-12 col-sm-12">
+          <div class="col-xs-6 col-sm-6" id="div_chart">
             <canvas id="myChart" width="400" height="400"></canvas>
+          </div>
+          <div class="col-xs-6 col-sm-6">
+            <canvas id="myChart2" width="400" height="400"></canvas>
           </div>
         </div>
 

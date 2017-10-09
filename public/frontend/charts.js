@@ -11,7 +11,7 @@ var vm = new Vue({
 });
 
 var Empleabilidad = {
-    get: function get(callback) {
+    get: function get(id, callback) {
         var request = {
             idCareer: vm.career,
             referenceYear: vm.anio,
@@ -22,7 +22,7 @@ var Empleabilidad = {
         $.post("sueldos", request,
         //$.get( "sueldos/"+careerId+"/"+anio,
         function (response) {
-            callback(response);
+            callback(id, response);
         }).done(function (response) {
             //alert( "second success" );
         }).fail(function (response) {
@@ -60,11 +60,9 @@ var Regiones = {
     }
 };
 
-pintar = function pintar(sueldos) {
-    $('#div_chart').html('<canvas id="myChart" width="400" height="400"></canvas>');
-    var ctx = document.getElementById("myChart").getContext('2d');
-    //sueldos.data
-    //sueldos.labels
+pintar = function pintar(id, sueldos) {
+    $('#div_' + id).html('<canvas id="' + id + '" width="400" height="400"></canvas>');
+    var ctx = document.getElementById(id).getContext('2d');
 
     options = {
         scales: {
@@ -96,7 +94,13 @@ pintar = function pintar(sueldos) {
 };
 $("#btn_sueldos").click(function () {
     //careerId=$('#slct_carrera').val();
-    Empleabilidad.get(pintar);
+    id = 'chart';
+    Empleabilidad.get(id, pintar);
+});
+$("#btn_sueldos2").click(function () {
+    //careerId=$('#slct_carrera').val();
+    id = 'chart2';
+    Empleabilidad.get(id, pintar);
 });
 
 options = {

@@ -1,0 +1,7 @@
+{
+    "runtime": {
+        "majorVersion": "5.6"
+    },
+    "command": "sh ./start.sh",
+    "notes": "SUNEDU - Elige tu futuro"
+}

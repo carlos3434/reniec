@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'menus',
+			'host'      => '129.150.94.230',
+			'database'  => 'reniec',
 			'username'  => 'root',
-			'password'  => '12345',
+			'password'  => 'Oracl3#Hack',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

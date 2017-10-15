@@ -11,18 +11,16 @@ let vm = new Vue({
             genderName:'',
             experienceYears:5
         },
-        sueldos:{
-            label: '',
-            backgroundColor: "#117a8b"
-        }
+        sueldos:{},
     },
 });
 
 var Empleabilidad={
-    get:function(filtro,tipo) {
-        $.post("sueldos",filtro,
+    get:function(filtro) {
+        $.post("empresa",filtro,
         function(response) {
-            pintar(response,tipo);
+            //pintar(response);
+            vm.sueldos = response;
         })
         .done(function(response) {
             //alert( "second success" );
@@ -38,7 +36,7 @@ var Empleabilidad={
 
 var Carreras={
     get:function() {
-        $.get( "empresa",
+        $.get( "careers",
         function(response) {
             vm.carreras=response.careers;
         })
@@ -72,21 +70,7 @@ var Regiones={
 };
 
 pintar=function(sueldos){
-    vm.sueldos.data= sueldos.values;
     
-    $('#div_chart').html('<canvas id="chart" width="800" height="450"></canvas>');
-    var ctx = document.getElementById("chart").getContext('2d');
-
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ["<1k", "1k - 3k", "3k - 5k", "5k - 8k", ">8k"],
-          datasets: [
-            vm.sueldos1,
-            vm.sueldos2
-          ]
-        }
-    });
 };
 $( "#btn_sueldos" ).click(function() {
     Empleabilidad.get(vm.filtro);

@@ -55,14 +55,14 @@
       <div class="container">
         <h2 class="text-center">...</h2>
         <h2 class="text-center">...</h2>
-        <h2 class="text-center">Salario y Empleabilidad</h2><br>
+        <h2 class="text-center">Universidad</h2><br>
 
         <div class="row">
             <div class="col-xs-3">
 
               <label class="control-label">Carrera:
               </label>
-              <select class="form-control" v-model="filtro1.careerName">
+              <select class="form-control" v-model="filtro.careerName">
                 <option v-for="carrera in carreras" v-bind:value="carrera.name">
                   @{{ carrera.name }}
                 </option>
@@ -70,21 +70,21 @@
 
               <label class="control-label">Region:
               </label>
-              <select class="form-control" v-model="filtro1.regionName">
+              <select class="form-control" v-model="filtro.regionName">
                 <option v-for="region in regiones" v-bind:value="region.name">
                   @{{ region.name }}
                 </option>
               </select>
 
               <label for="genero">Genero</label>
-              <select class="form-control" v-model="filtro1.genderName">
+              <select class="form-control" v-model="filtro.genderName">
                   <option value='' selected="selected">Seleccione</option>
                   <option value='MASCULINO'>Masculino</option>
                   <option value='FEMENINO'>Femenino</option>
               </select>
 
               <label for="genero">Año referencia</label><br>
-                <select class="form-control" v-model="filtro1.referenceYear">
+                <select class="form-control" v-model="filtro.referenceYear">
                   <option v-for="reference in references">
                     @{{ reference }}
                   </option>
@@ -94,44 +94,25 @@
 
             </div>
 
-            <div class="col-xs-3">
-
-              <label class="control-label">Carrera:
-              </label>
-              <select class="form-control" v-model="filtro2.careerName">
-                <option v-for="carrera in carreras" v-bind:value="carrera.name">
-                  @{{ carrera.name }}
-                </option>
-              </select>
-
-              <label class="control-label">Region:
-              </label>
-              <select class="form-control" v-model="filtro2.regionName">
-                <option v-for="region in regiones" v-bind:value="region.name">
-                  @{{ region.name }}
-                </option>
-              </select>
-
-              <label for="genero">Genero</label>
-              <select class="form-control" v-model="filtro2.genderName">
-                  <option value='' selected="selected">Seleccione</option>
-                  <option value='MASCULINO'>Masculino</option>
-                  <option value='FEMENINO'>Femenino</option>
-              </select>
-
-              <label for="genero">Año referencia</label><br>
-                <select class="form-control" v-model="filtro2.referenceYear">
-                  <option v-for="reference in references">
-                    @{{ reference }}
-                  </option>
-              </select>
-
-              <button type="button" id="btn_sueldos2" class="btn btn-warning">Consultar</button>
-
-            </div>
-
-            <div class="col-xs-6 col-sm-6" id="div_chart">
-                <canvas id="chart" width="800" height="450"></canvas>
+            <div class="col-xs-6 col-sm-6 table-responsive" id="div_chart">
+                
+                <table id="t_table" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>UNIVERSIDAD</th>
+                        <th>CANTIDAD</th>
+                        <th>PORCENTAJE</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tb_componentes">
+                        <tr v-for="sueldo in sueldos">
+                          <td>@{{sueldo.UNIVERSIDAD}}</td>
+                          <td>@{{sueldo.CANTIDAD}}</td>
+                          <td>@{{sueldo.PORCENTAJE}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    
             </div>
         </div>
 

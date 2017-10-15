@@ -101,9 +101,27 @@ class ApiSueldoController extends Controller
 
         $queryString = "CALL pro_consulta02('" . $careerName ."', " . $referenceYear .", " . $experienceYears .", '" . $regionName ."', '" . $genderName ."')";
         $sueldosResponse = DB::select($queryString);
-//dd($sueldosResponse);
+        $response =[];
+        if (count($sueldosResponse)>0) {            
+            $response = [
+                "values" =>[
+                    $sueldosResponse[0]->PER_CON,
+                    $sueldosResponse[0]->PER_SIN
+                ],
+                "porcentajes"=>[
+                    $sueldosResponse[0]->PER_CON_POR,
+                    $sueldosResponse[0]->PER_SIN_POR
+                ]
+                
+            ];
+        }
+        return Response::json($response);
+        
         $sueldosResponseFirst = $sueldosResponse[0];
-
+        $response = [
+            $sueldosResponse[0]['PER_CON'],
+            $sueldosResponse[0]['PER_SIN']
+        ];
         $valuesArr = array();
 
         foreach ($sueldosResponseFirst as $key => $value) {
@@ -124,15 +142,15 @@ class ApiSueldoController extends Controller
 
         $queryString = "CALL pro_consulta03('" . $careerName ."', " . $referenceYear .", " . $experienceYears .", '" . $regionName ."', '" . $genderName ."')";
         $sueldosResponse = DB::select($queryString);
-//dd($sueldosResponse);
+/*dd($sueldosResponse);
         $sueldosResponseFirst = $sueldosResponse[0];
 
         $valuesArr = array();
 
         foreach ($sueldosResponseFirst as $key => $value) {
             array_push($valuesArr, $value);
-        };
-        return Response::json($valuesArr);
+        };*/
+        return Response::json($sueldosResponse);
     }
     public function empresa()
     {
@@ -147,6 +165,7 @@ class ApiSueldoController extends Controller
 
         $queryString = "CALL pro_consulta04('" . $careerName ."', " . $referenceYear .", " . $experienceYears .", '" . $regionName ."', '" . $genderName ."')";
         $sueldosResponse = DB::select($queryString);
+        return Response::json($sueldosResponse);
 //dd($sueldosResponse);
         $sueldosResponseFirst = $sueldosResponse[0];
 

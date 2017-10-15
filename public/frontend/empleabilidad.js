@@ -60,7 +60,8 @@ var Regiones = {
 };
 
 pintar = function pintar(sueldos) {
-    vm.sueldos.data = sueldos;
+    vm.sueldos.data = sueldos.values;
+    vm.sueldos.porcentajes = sueldos.porcentajes;
 
     $('#div_chart').html('<canvas id="chart" width="800" height="450"></canvas>');
     var ctx = document.getElementById("chart").getContext('2d');
@@ -68,20 +69,20 @@ pintar = function pintar(sueldos) {
     new Chart(document.getElementById("chart"), {
         type: 'polarArea',
         data: {
-            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            labels: ["Con: " + vm.sueldos.porcentajes[0] + '%', "Sin: " + vm.sueldos.porcentajes[1] + '%'],
             datasets: [{
-                label: "Population (millions)",
-                backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                label: "",
+                //label: "Population (millions)",
+                backgroundColor: ["#3e95cd", "#8e5ea2"],
                 data: vm.sueldos.data
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: 'Predicted world population (millions) in 2050'
-            }
-        }
-    });
+            }] /*,
+               options: {
+                title: {
+                  display: true,
+                  text: 'Personas con Empleo'
+                }
+               }*/
+        } });
 };
 $("#btn_sueldos").click(function () {
     Empleabilidad.get(vm.filtro);

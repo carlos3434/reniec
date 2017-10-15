@@ -55,7 +55,7 @@
       <div class="container">
         <h2 class="text-center">...</h2>
         <h2 class="text-center">...</h2>
-        <h2 class="text-center">Salario y Empleabilidad</h2><br>
+        <h2 class="text-center">Empleabilidad</h2><br>
 
         <div class="row">
             <div class="col-xs-3">

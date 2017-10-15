@@ -4,35 +4,22 @@ var vm = new Vue({
         carreras: [],
         regiones: [],
         references: [2012, 2017],
-        filtro1: {
+        filtro: {
             careerName: '',
             referenceYear: 2012,
             regionName: '',
             genderName: '',
             experienceYears: 5
         },
-        filtro2: {
-            careerName: '',
-            referenceYear: 2017,
-            regionName: '',
-            genderName: '',
-            experienceYears: 5
-        },
-        sueldos1: {
-            label: '',
-            backgroundColor: "#117a8b"
-        },
-        sueldos2: {
-            label: '',
-            backgroundColor: "#d39e00"
-        }
+        sueldos: {}
     }
 });
 
 var Empleabilidad = {
-    get: function get(filtro, tipo) {
+    get: function get(filtro) {
         $.post("universidad", filtro, function (response) {
-            pintar(response, tipo);
+            //pintar(response);
+            vm.sueldos = response;
         }).done(function (response) {
             //alert( "second success" );
         }).fail(function (response) {
@@ -70,29 +57,9 @@ var Regiones = {
     }
 };
 
-pintar = function pintar(sueldos, tipo) {
-    if (tipo == 1) {
-        vm.sueldos1.data = sueldos.values;
-    }
-    if (tipo == 2) {
-        vm.sueldos2.data = sueldos.values;
-    }
-    $('#div_chart').html('<canvas id="chart" width="800" height="450"></canvas>');
-    var ctx = document.getElementById("chart").getContext('2d');
-
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ["<1k", "1k - 3k", "3k - 5k", "5k - 8k", ">8k"],
-            datasets: [vm.sueldos1, vm.sueldos2]
-        }
-    });
-};
+pintar = function pintar(sueldos) {};
 $("#btn_sueldos").click(function () {
-    Empleabilidad.get(vm.filtro1, 1);
-});
-$("#btn_sueldos2").click(function () {
-    Empleabilidad.get(vm.filtro2, 2);
+    Empleabilidad.get(vm.filtro);
 });
 
 $(document).ready(function () {

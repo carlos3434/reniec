@@ -15,8 +15,17 @@ header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Author
 */
 
 
+Route::get('salario', function () {
+    return View::make('web.salario');
+});
 Route::get('empleabilidad', function () {
     return View::make('web.empleabilidad');
+});
+Route::get('universidad', function () {
+    return View::make('web.universidad');
+});
+Route::get('empresa', function () {
+    return View::make('web.empresa');
 });
 Route::get('empleabilidad2', function () {
     return View::make('web.empleabilidad2');
@@ -29,6 +38,9 @@ Route::get('careers', 'ApiSueldoController@careers');
 Route::get('regiones', 'ApiSueldoController@regiones');
 
 Route::post('sueldos', 'ApiSueldoController@index');
+Route::post('empleabilidad', 'ApiSueldoController@empleabilidad');
+Route::post('universidad', 'ApiSueldoController@universidad');
+Route::post('empresa', 'ApiSueldoController@empresa');
 
 Route::get('colores', function () {
     $colores=[12, 19, 3, 5, 2, 3];

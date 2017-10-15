@@ -67,23 +67,23 @@
 
         <div class="row">
           <div class="col-sm-6 portfolio-item">
+            <a class="portfolio-link" href="salario">
+              <h2 class="text-center">Salarios</h2>
+            </a>
+          </div>
+          <div class="col-sm-6 portfolio-item">
             <a class="portfolio-link" href="empleabilidad">
-              <h2 class="text-center">Sueldos y empleabilidad</h2>
+              <h2 class="text-center">Empleabilidad</h2>
             </a>
           </div>
           <div class="col-sm-6 portfolio-item">
-            <a class="portfolio-link" href="#">
-              <h2 class="text-center">...</h2>
+            <a class="portfolio-link" href="universidad">
+              <h2 class="text-center">Universidades</h2>
             </a>
           </div>
           <div class="col-sm-6 portfolio-item">
-            <a class="portfolio-link" href="#">
-              <h2 class="text-center">...</h2>
-            </a>
-          </div>
-          <div class="col-sm-6 portfolio-item">
-            <a class="portfolio-link" href="#">
-              <h2 class="text-center">...</h2>
+            <a class="portfolio-link" href="empresa">
+              <h2 class="text-center">Empresas</h2>
             </a>
           </div>
         </div>

@@ -31,7 +31,7 @@ let vm = new Vue({
 
 var Empleabilidad={
     get:function(filtro,tipo) {
-        $.post("sueldos",filtro,
+        $.post("universidad",filtro,
         function(response) {
             pintar(response,tipo);
         })

@@ -62,7 +62,7 @@
 
               <label class="control-label">Carrera:
               </label>
-              <select class="form-control" v-model="filtro.careerName">
+              <select class="form-control" v-model="filtro1.careerName">
                 <option v-for="carrera in carreras" v-bind:value="carrera.name">
                   @{{ carrera.name }}
                 </option>
@@ -70,21 +70,21 @@
 
               <label class="control-label">Region:
               </label>
-              <select class="form-control" v-model="filtro.regionName">
+              <select class="form-control" v-model="filtro1.regionName">
                 <option v-for="region in regiones" v-bind:value="region.name">
                   @{{ region.name }}
                 </option>
               </select>
 
               <label for="genero">Genero</label>
-              <select class="form-control" v-model="filtro.genderName">
+              <select class="form-control" v-model="filtro1.genderName">
                   <option value='' selected="selected">Seleccione</option>
                   <option value='MASCULINO'>Masculino</option>
                   <option value='FEMENINO'>Femenino</option>
               </select>
 
               <label for="genero">Año referencia</label><br>
-                <select class="form-control" v-model="filtro.referenceYear">
+                <select class="form-control" v-model="filtro1.referenceYear">
                   <option v-for="reference in references">
                     @{{ reference }}
                   </option>
@@ -94,8 +94,43 @@
 
             </div>
 
+            <div class="col-xs-3">
 
-            <div class="col-xs-9 col-sm-9" id="div_chart">
+              <label class="control-label">Carrera:
+              </label>
+              <select class="form-control" v-model="filtro2.careerName">
+                <option v-for="carrera in carreras" v-bind:value="carrera.name">
+                  @{{ carrera.name }}
+                </option>
+              </select>
+
+              <label class="control-label">Region:
+              </label>
+              <select class="form-control" v-model="filtro2.regionName">
+                <option v-for="region in regiones" v-bind:value="region.name">
+                  @{{ region.name }}
+                </option>
+              </select>
+
+              <label for="genero">Genero</label>
+              <select class="form-control" v-model="filtro2.genderName">
+                  <option value='' selected="selected">Seleccione</option>
+                  <option value='MASCULINO'>Masculino</option>
+                  <option value='FEMENINO'>Femenino</option>
+              </select>
+
+              <label for="genero">Año referencia</label><br>
+                <select class="form-control" v-model="filtro2.referenceYear">
+                  <option v-for="reference in references">
+                    @{{ reference }}
+                  </option>
+              </select>
+
+              <button type="button" id="btn_sueldos2" class="btn btn-warning">Consultar</button>
+
+            </div>
+
+            <div class="col-xs-6 col-sm-6" id="div_chart">
                 <canvas id="chart" width="800" height="450"></canvas>
             </div>
         </div>
@@ -194,7 +229,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
-    {{HTML::script(mix('/frontend/empleabilidad.js'))}}
+    {{HTML::script(mix('/frontend/universidad.js'))}}
   </body>
 
 </html>

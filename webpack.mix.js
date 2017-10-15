@@ -59,9 +59,30 @@ mix.babel(
 
 mix.babel(
     [
-    'resources/frontend/charts.js'
+    'resources/frontend/salario.js'
     ],
-    'public/frontend/charts.js'
+    'public/frontend/salario.js'
+).version();
+
+mix.babel(
+    [
+    'resources/frontend/empleabilidad.js'
+    ],
+    'public/frontend/empleabilidad.js'
+).version();
+
+mix.babel(
+    [
+    'resources/frontend/universidad.js'
+    ],
+    'public/frontend/universidad.js'
+).version();
+
+mix.babel(
+    [
+    'resources/frontend/empresa.js'
+    ],
+    'public/frontend/empresa.js'
 ).version();
 
 mix.babel(

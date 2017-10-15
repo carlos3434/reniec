@@ -82,4 +82,74 @@ class ApiSueldoController extends Controller
 
     }
 
+    public function empleabilidad()
+    {
+
+        $careerName = Input::get('careerName', 'DERECHO');
+        $referenceYear = Input::get('referenceYear', 2017);
+        $experienceYears = Input::get('experienceYears', 5);
+        $genderName = Input::get('genderName', 'FEMENINO');
+        $regionName = Input::get('regionName', 'LIMA');
+
+        $sueldos = Sueldo::query();
+
+        $queryString = "CALL pro_consulta02('" . $careerName ."', " . $referenceYear .", " . $experienceYears .", '" . $regionName ."', '" . $genderName ."')";
+        $sueldosResponse = DB::select($queryString);
+//dd($sueldosResponse);
+        $sueldosResponseFirst = $sueldosResponse[0];
+
+        $valuesArr = array();
+
+        foreach ($sueldosResponseFirst as $key => $value) {
+            array_push($valuesArr, $value);
+        };
+        return Response::json($valuesArr);
+    }
+    public function universidad()
+    {
+
+        $careerName = Input::get('careerName', 'DERECHO');
+        $referenceYear = Input::get('referenceYear', 2017);
+        $experienceYears = Input::get('experienceYears', 5);
+        $genderName = Input::get('genderName', 'FEMENINO');
+        $regionName = Input::get('regionName', 'LIMA');
+
+        $sueldos = Sueldo::query();
+
+        $queryString = "CALL pro_consulta03('" . $careerName ."', " . $referenceYear .", " . $experienceYears .", '" . $regionName ."', '" . $genderName ."')";
+        $sueldosResponse = DB::select($queryString);
+//dd($sueldosResponse);
+        $sueldosResponseFirst = $sueldosResponse[0];
+
+        $valuesArr = array();
+
+        foreach ($sueldosResponseFirst as $key => $value) {
+            array_push($valuesArr, $value);
+        };
+        return Response::json($valuesArr);
+    }
+    public function empresa()
+    {
+
+        $careerName = Input::get('careerName', 'DERECHO');
+        $referenceYear = Input::get('referenceYear', 2017);
+        $experienceYears = Input::get('experienceYears', 5);
+        $genderName = Input::get('genderName', 'FEMENINO');
+        $regionName = Input::get('regionName', 'LIMA');
+
+        $sueldos = Sueldo::query();
+
+        $queryString = "CALL pro_consulta04('" . $careerName ."', " . $referenceYear .", " . $experienceYears .", '" . $regionName ."', '" . $genderName ."')";
+        $sueldosResponse = DB::select($queryString);
+//dd($sueldosResponse);
+        $sueldosResponseFirst = $sueldosResponse[0];
+
+        $valuesArr = array();
+
+        foreach ($sueldosResponseFirst as $key => $value) {
+            array_push($valuesArr, $value);
+        };
+        return Response::json($valuesArr);
+    }
+
 }

@@ -3,26 +3,37 @@ let vm = new Vue({
     data: {
         carreras:[],
         regiones:[],
-        career:'',
-        region:'',
-        genero:'',
-        anio:2017,
+        references:[2012,2017],
+        filtro1:{
+            careerId:'',
+            referenceYear:2012,
+            regionId:'',
+            gender:'',
+            experienceYears:5
+        },
+        filtro2:{
+            careerId:'',
+            referenceYear:2017,
+            regionId:'',
+            gender:'',
+            experienceYears:5
+        },
+        sueldos1:{
+            label: '',
+            backgroundColor: "#117a8b"
+        },
+        sueldos2:{
+            label: '',
+            backgroundColor: "#d39e00"
+        }
     },
 });
 
 var Empleabilidad={
-    get:function(id,callback) {
-        var request={
-            idCareer: vm.career,
-            referenceYear: vm.anio,
-            experienceYears: 5,
-            gender: vm.genero,
-            regionId: vm.region
-        };
-        $.post("sueldos",request,
-        //$.get( "sueldos/"+careerId+"/"+anio,
+    get:function(filtro,tipo) {
+        $.post("sueldos",filtro,
         function(response) {
-            callback(id,response);
+            pintar(response,tipo);
         })
         .done(function(response) {
             //alert( "second success" );
@@ -71,134 +82,32 @@ var Regiones={
     }
 };
 
-pintar=function(id,sueldos){
-    $('#div_'+id).html('<canvas id="'+id+'" width="400" height="400"></canvas>');
-    var ctx = document.getElementById(id).getContext('2d');
+pintar=function(sueldos,tipo){
+    if (tipo==1) {
+        vm.sueldos1.data= sueldos.data;
+    }
+    if (tipo==2) {
+        vm.sueldos2.data= sueldos.data;
+    }
+    $('#div_chart').html('<canvas id="chart" width="800" height="450"></canvas>');
+    var ctx = document.getElementById("chart").getContext('2d');
 
-    options = {
-        scales: {
-            xAxes: [{
-                gridLines: {
-                    offsetGridLines: true
-                }
-            }]
-        }
-    };
-    color =[
-        "rgb(255, 99, 132)",
-        "rgb(255, 159, 64)",
-        "rgb(255, 205, 86)",
-        "rgb(75, 192, 192)",
-        "rgb(54, 162, 235)",
-        "rgb(153, 102, 255)",
-        "rgb(201, 203, 207)"
-    ];
-
-    data ={
-        labels: sueldos.labels,
-        datasets: [{
-            label: '# of Votes',
-            data: sueldos.data,
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    };
-
-
-    var myBarChart = new Chart(ctx, {
+    new Chart(ctx, {
         type: 'bar',
-        data: data,
-        options: options
+        data: {
+          labels: ["<1k", "1k - 3k", "3k - 5k", "5k - 8k", ">8k"],
+          datasets: [
+            vm.sueldos1,
+            vm.sueldos2
+          ]
+        }
     });
 };
 $( "#btn_sueldos" ).click(function() {
-    //careerId=$('#slct_carrera').val();
-    id='chart';
-    Empleabilidad.get(id,pintar);
+    Empleabilidad.get(vm.filtro1,1);
 });
 $( "#btn_sueldos2" ).click(function() {
-    //careerId=$('#slct_carrera').val();
-    id='chart2';
-    Empleabilidad.get(id,pintar);
-});
-
-
-
-options ={
-        segmentShowStroke : true,
-        segmentStrokeColor : "#fff",
-        segmentStrokeWidth : 2,
-        percentageInnerCutout : 50,
-        animationSteps : 100,
-        animationEasing : "easeOutBounce",
-        animateRotate : true,
-        animateScale : false,
-        responsive: true,
-        maintainAspectRatio: true,
-        showScale: true,
-        //animateScale: true
-};
-var data = {
-    labels: [
-        "Saudi Arabia",
-        "Russia",
-    ],
-    datasets: [
-        {
-            data: [133.3, 86.2],
-            backgroundColor: [
-                "#FF6384",
-                "#63FF84",
-                "#84FF63",
-                "#8463FF",
-                "#6384FF"
-            ]
-        }]
-};
-var chartOptions = {
-  rotation: -Math.PI,
-  cutoutPercentage: 30,
-  circumference: 2*Math.PI,
-  legend: {
-    position: 'left'
-  },
-  animation: {
-    animateRotate: false,
-    animateScale: true
-  }
-};
-/*
-data = {
-    datasets: [{
-        data: [10, 20, 30]
-    }],
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-        'Red',
-        'Yellow',
-        'Blue'
-    ]
-};*/
-var doughnut = document.getElementById("doughnut").getContext('2d');
-var myPieChart = new Chart(doughnut,{
-    type: 'pie',
-    data: data,
-    options: chartOptions
+    Empleabilidad.get(vm.filtro2,2);
 });
 
 $(document).ready(function() {

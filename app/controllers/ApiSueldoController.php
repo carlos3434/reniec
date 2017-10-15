@@ -22,7 +22,10 @@ class ApiSueldoController extends Controller
     {
 
         $response = array(
-            "careers" => Career::all(),
+            "careers" => Career::select('car_id as id','car_nombre as name')
+            ->where('car_estado',1)
+            ->where('car_eliminado',0)
+            ->get(),
         );
 
         return Response::json($response);
@@ -33,7 +36,10 @@ class ApiSueldoController extends Controller
     {
 
         $response = array(
-            "regiones" => Region::all(),
+            "regiones" => Region::select('ciu_id as id','ciu_nombre as name')
+            ->where('ciu_estado',1)
+            ->where('ciu_eliminado',0)
+            ->get(),
         );
 
         return Response::json($response);

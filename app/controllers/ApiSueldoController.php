@@ -58,10 +58,17 @@ class ApiSueldoController extends Controller
         $careerName = Input::get('careerName', 'DERECHO');
         $referenceYear = Input::get('referenceYear', 2017);
         $experienceYears = Input::get('experienceYears', 5);
-        $genderName = Input::get('genderName', 'FEMENINO');
-        $regionName = Input::get('regionName', 'LIMA');
+        $genderName = Input::get('genderName', 'TODOS');
+        $regionName = Input::get('regionName', 'TODOS');
 
         $sueldos = Sueldo::query();
+
+        if ($genderName == '') {
+            $genderName = 'TODOS';
+        };
+        if ($regionName == '') {
+            $regionName = 'TODOS';
+        };
 
         $queryString = "CALL pro_consulta01('" . $careerName ."', " . $referenceYear .", " . $experienceYears .", '" . $regionName ."', '" . $genderName ."')";
         $sueldosResponse = DB::select($queryString);

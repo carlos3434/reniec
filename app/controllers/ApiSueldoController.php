@@ -49,56 +49,36 @@ class ApiSueldoController extends Controller
     public function index()
     {
 
-        $careerId = Input::get('idCareer', 1);
+        $careerName = Input::get('careerName', 'DERECHO');
         $referenceYear = Input::get('referenceYear', 2017);
         $experienceYears = Input::get('experienceYears', 5);
-        $gender = Input::get('gender', 'F');
+        $genderName = Input::get('genderName', 'FEMENINO');
+        $regionName = Input::get('regionName', 'LIMA');
 
         $sueldos = Sueldo::query();
 
-        if ( !is_null($careerId) ) {
-            if ($careerId!='') {
-                $sueldos->where('careerId', $careerId);    
-            } else {
-                $sueldos->where('careerId', 1);
-            };
-        } else {
-            $sueldos->where('careerId', 1);
+        $queryString = "CALL pro_consulta01('" . $careerName ."', " . $referenceYear .", " . $experienceYears .", '" . $regionName ."', '" . $genderName ."')";
+        $sueldosResponse = DB::select($queryString);
+
+        $sueldosResponseFirst = $sueldosResponse[0];
+
+        $valuesArr = array();
+
+        foreach ($sueldosResponseFirst as $key => $value) {
+            array_push($valuesArr, $value);
         };
 
-        $sueldos->where('referenceYear', $referenceYear);
-        $sueldos->where('experienceYears', $experienceYears);
-
-        if ( !is_null($gender) and $gender!='' ) {
-            $sueldos->where('gender', '=', $gender);
-        } else {
-            $sueldos->where('gender', '=', 'F');
-        };
-
-        //DB::connection()->enableQueryLog();
-
-        $sueldos = $sueldos->get();
-
-        /*
-        $queries = DB::getQueryLog();
-        var_dump($queries);
-        */
-        //die();
-        
-        $labels = array();
-        $data = array();
-
-        foreach ($sueldos as $sueldo) {
-            array_push($labels, (string) $sueldo->salary);
-            array_push($data, $sueldo->quantity);
-        };
-
-        $response = array(
-            "labels" => $labels,
-            "data" => $data,
+        $arrResponse = array(
+            $valuesArr[6],
+            $valuesArr[7],
+            $valuesArr[8],
+            $valuesArr[9],
+            $valuesArr[10]
         );
 
-        return Response::json($response);      
+        $response["values"] = $arrResponse;
+
+        return Response::json($response);
 
     }
 
